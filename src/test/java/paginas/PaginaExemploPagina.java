@@ -15,11 +15,11 @@ public class PaginaExemploPagina extends ElementosExemplos implements InteracaoW
 	
 	public void acessarSistema() {
 		openUrl(util.getUrl());
-		esperarUrlSerCarregada(util.getUrl(), 10);
+		waitUrlLoading(util.getUrl(), 10);
 	}
 	
 	public void realizarLogin() {
-		escrever(getTxtUsuario(), "brq");
+		write(getTxtUsuario(), "brq");
 	}
 	
 }

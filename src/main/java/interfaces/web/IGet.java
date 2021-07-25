@@ -16,7 +16,7 @@ import interfaces.log.LogWeb;
 public interface IGet {
 	static Logger logger = LogWeb.getLogger(IGet.class);
 
-	default String obterTexto(By elemento) {
+	default String getText(By elemento) {
 		String retorno = null;
 		try {
 			logger.info(String.format("Realizar a ação do método [obterTexto] com elemento [%s].", elemento));

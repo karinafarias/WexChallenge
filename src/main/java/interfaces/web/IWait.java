@@ -24,7 +24,7 @@ public interface IWait {
 	static Logger logger = LogWeb.getLogger(IWait.class);
 	long TIMEOUT = 40;
 
-	default void esperarSerClicavel(By elemento, int tempoEmSegundos) {
+	default void waitBeClickable(By elemento, int tempoEmSegundos) {
 		try {
 			logger.info(String.format(
 					"Realizar a ação do método [esperarElementoSerClicavel] com elemento [%s] por %d segundos", elemento,
@@ -44,7 +44,7 @@ public interface IWait {
 	}
 
 	
-	default void esperarSerClicavel(WebElement elemento, int tempoEmSegundos) {
+	default void waitBeClickable(WebElement elemento, int tempoEmSegundos) {
 		try {
 			logger.info(String.format(
 					"Realizar a ação do método [esperarElementoSerClicavel] com elemento [%s] por %d segundos", elemento,
@@ -63,7 +63,7 @@ public interface IWait {
 		}
 	}
 	
-	default void esperarSerSelecionavel(By elemento, int tempoEmSegundos) {
+	default void waitBeSelected(By elemento, int tempoEmSegundos) {
 		try {
 			logger.info(String.format(
 					"Realizar a ação do método [esperarElementoSerSelecionado] com elemento [%s] por %d segundos", elemento,
@@ -82,7 +82,7 @@ public interface IWait {
 		}
 	}
 
-	default void esperarUrlSerCarregada(String url, int tempoEmSegundos) {
+	default void waitUrlLoading(String url, int tempoEmSegundos) {
 		try {
 			logger.info(String.format("Realizar a ação do método [esperarUrlSerCarregada] com url [%s] por %d segundos",
 					url, tempoEmSegundos));
@@ -94,7 +94,7 @@ public interface IWait {
 		}
 	}
 
-	default void esperarCarregamento(int posTime, long time) {
+	default void waitLoading(int posTime, long time) {
 		logger.info(String.format("Realizar a ação do método [esperarCarregamento] por %d segundos.", posTime));
 		WebDriver driver = DriverWeb.getDriver();
 		try {

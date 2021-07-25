@@ -20,135 +20,91 @@ public interface IMove extends IMoveJS {
 	/**
 	 * @param elemento
 	 */
-	default void moverParaOelemento(By elemento) {
+	default void moveToElement(By elemento) {
 		try {
-			logger.info(String.format("Realizar a ação do método [moverParaOelemento] com o elemento [%s].", elemento));	
+			logger.info(String.format("Do method [moveToElement] with the element[%s].", elemento));	
 			Actions action = new Actions(DriverWeb.getDriver());
 			action.moveToElement(DriverWeb.getDriver().findElement(elemento)).build().perform();		
-		} catch (NoSuchElementException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO encontrado.'");
-			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + elemento + "' em tela.");
-		} catch (TimeoutException e) {
-			logger.error(" -- ERRO: Tempo excedido para encontrar elemento: '" + elemento);
-			Assert.fail(LocalDateTime.now() + " Tempo excedido para encontrar o elemento: '" + elemento + "' em tela.");
-		} catch (ElementNotVisibleException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO esta visivel na plataforma: '");
-			Assert.fail(LocalDateTime.now() + " -- O elemento: " + elemento + "NAO esta visivel' em tela.");
-		}
+		} catch (NoSuchElementException|TimeoutException|ElementNotVisibleException e) {
+			logger.error(e.getMessage());
+			Assert.fail(LocalDateTime.now() + " " + e.getMessage() + " " + elemento );
+		} 
 	}
 
-	default void moverParaOelemento(WebElement elemento) {
+	default void moveToElement(WebElement elemento) {
 		try {
-			logger.info(String.format("Realizar a ação do método [moverParaOelemento] com o elemento [%s].", elemento));
+			logger.info(String.format("Do method [moveToElement] with the element[%s].", elemento));
 			Actions action = new Actions(DriverWeb.getDriver());	
 			action.moveToElement(elemento).build().perform();
-		} catch (NoSuchElementException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO encontrado.'");
-			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + elemento + "' em tela.");
-		} catch (TimeoutException e) {
-			logger.error(" -- ERRO: Tempo excedido para encontrar elemento: '" + elemento);
-			Assert.fail(LocalDateTime.now() + " Tempo excedido para encontrar o elemento: '" + elemento + "' em tela.");
-		} catch (ElementNotVisibleException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO esta visivel na plataforma: '");
-			Assert.fail(LocalDateTime.now() + " -- O elemento: " + elemento + "NAO esta visivel' em tela.");
+		} catch (ElementNotVisibleException|TimeoutException|NoSuchElementException e) {
+			logger.error(e.getMessage());
+			Assert.fail(LocalDateTime.now() + " " + e.getMessage() + " " + elemento );
 		}
 	}
 
-	default Boolean moverParaElementoeClicar(By elemento) {
+	default Boolean moveToElementAndClick(By elemento) {
 		try {
-			logger.info(String.format("Realizar a ação do método [moverParaElementoEClicar] com o elemento [%s].", elemento));
+			logger.info(String.format("Do method [moveToElementAndClick] with the element[%s].", elemento));
 			Actions action = new Actions(DriverWeb.getDriver());
 			action.moveToElement(DriverWeb.getDriver().findElement(elemento)).click().build().perform();	
-		} catch (NoSuchElementException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO encontrado.'");
-			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + elemento + "' em tela.");
-		} catch (TimeoutException e) {
-			logger.error(" -- ERRO: Tempo excedido para encontrar elemento: '" + elemento);
-			Assert.fail(LocalDateTime.now() + " Tempo excedido para encontrar o elemento: '" + elemento + "' em tela.");
-		} catch (ElementNotVisibleException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO esta visivel na plataforma: '");
-			Assert.fail(LocalDateTime.now() + " -- O elemento: " + elemento + "NAO esta visivel' em tela.");
+		} catch (ElementNotVisibleException|TimeoutException|NoSuchElementException e) {
+			logger.error(e.getMessage());
+			Assert.fail(LocalDateTime.now() + " " + e.getMessage() + " " + elemento );
 		}
 		return true;
 	}
 
-	default void moverParaElementoeClicar(WebElement elemento) {
+	default void moveToElementAndClick(WebElement elemento) {
 		try {
-			logger.info(String.format("Realizar a ação do método [moverParaElementoEClicar] com o elemento [%s].", elemento));
+			logger.info(String.format("Do method [moveToElementAndClick] with the element[%s].", elemento));
 			Actions action = new Actions(DriverWeb.getDriver());
 			action.moveToElement(elemento).click().perform();	
-		} catch (NoSuchElementException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO encontrado.'");
-			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + elemento + "' em tela.");
-		} catch (TimeoutException e) {
-			logger.error(" -- ERRO: Tempo excedido para encontrar elemento: '" + elemento);
-			Assert.fail(LocalDateTime.now() + " Tempo excedido para encontrar o elemento: '" + elemento + "' em tela.");
-		} catch (ElementNotVisibleException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO esta visivel na plataforma: '");
-			Assert.fail(LocalDateTime.now() + " -- O elemento: " + elemento + "NAO esta visivel' em tela.");
+		} catch (ElementNotVisibleException|TimeoutException|NoSuchElementException e) {
+			logger.error(e.getMessage());
+			Assert.fail(LocalDateTime.now() + " " + e.getMessage() + " " + elemento );
 		}
 	}
 
-	default void manterElementoPressionado(By elemento) {
+	default void keepElementPressed(By elemento) {
 		try {
-			logger.info(String.format("Realizar a ação do método [manterElementoPressionado] com o elemento [%s].", elemento));
+			logger.info(String.format("Do method [keepElementPressed] with the element[%s].", elemento));
 			Actions action = new Actions(DriverWeb.getDriver());
 			action.clickAndHold(DriverWeb.getDriver().findElement(elemento)).perform();		
-		} catch (NoSuchElementException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO encontrado.'");
-			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + elemento + "' em tela.");
-		} catch (TimeoutException e) {
-			logger.error(" -- ERRO: Tempo excedido para encontrar elemento: '" + elemento);
-			Assert.fail(LocalDateTime.now() + " Tempo excedido para encontrar o elemento: '" + elemento + "' em tela.");
-		} catch (ElementNotVisibleException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO esta visivel na plataforma: '");
-			Assert.fail(LocalDateTime.now() + " -- O elemento: " + elemento + "NAO esta visivel' em tela.");
+		} catch (ElementNotVisibleException|TimeoutException|NoSuchElementException e) {
+			logger.error(e.getMessage());
+			Assert.fail(LocalDateTime.now() + " " + e.getMessage() + " " + elemento );
 		}
 	}
 
 	default void scrollToWebElement(By elemento) {
-		logger.info(String.format("Realizar a ação do método [scrollToWebElement] com o elemento [%s].", elemento));
+		logger.info(String.format("Do method [scrollToWebElement] with the element[%s].", elemento));
 		WebElement element = DriverWeb.getDriver().findElement(elemento);
 		scrollToWebElement(element);	
 	}
 
 	default void scrollToWebElement(WebElement elemento) {
 		try {
-			logger.info(String.format("Realizar a ação do método [scrollToWebElement] com o elemento [%s].", elemento));
+			logger.info(String.format("Do method [scrollToWebElement] with the element[%s].", elemento));
 			Actions action = new Actions(DriverWeb.getDriver());
 			action.moveToElement(elemento).perform();	
-		} catch (NoSuchElementException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO encontrado.'");
-			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + elemento + "' em tela.");
-		} catch (TimeoutException e) {
-			logger.error(" -- ERRO: Tempo excedido para encontrar elemento: '" + elemento);
-			Assert.fail(LocalDateTime.now() + " Tempo excedido para encontrar o elemento: '" + elemento + "' em tela.");
-		} catch (ElementNotVisibleException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO esta visivel na plataforma: '");
-			Assert.fail(LocalDateTime.now() + " -- O elemento: " + elemento + "NAO esta visivel' em tela.");
+		} catch (ElementNotVisibleException|TimeoutException|NoSuchElementException e) {
+			logger.error(e.getMessage());
+			Assert.fail(LocalDateTime.now() + " " + e.getMessage() + " " + elemento );
 		}
 	}
 
-	default void moverParaElementoeEscreve(WebElement element, String texto) {
+	default void moveToElementAndWrite(WebElement element, String texto) {
 		try {
-			logger.info(String.format("Realizar a ação do método [moverParaElementoEEscreve] com o elemento [%s] informando o texto [%s].", element, texto));
+			logger.info(String.format("Do method [moveToElementAndWrite] with the element[%s] and write text [%s].", element, texto));
 			Actions actions = new Actions(DriverWeb.getDriver());
 			actions.moveToElement(element);
 			actions.click();
 			actions.pause(10);
 			actions.sendKeys(texto);
 			actions.build().perform();
-		} catch (NoSuchElementException e) {
-			logger.error(" -- ERRO: elemento: '" + element.toString() + "' NAO encontrado.'");
-			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + element.toString()
-					+ "' em tela.");
-		} catch (TimeoutException e) {
-			logger.error(" -- ERRO: Tempo excedido para encontrar elemento: '" + element.toString());
-			Assert.fail(LocalDateTime.now() + " Tempo excedido para encontrar o elemento: '" + element.toString()
-					+ "' em tela.");
-		} catch (ElementNotVisibleException e) {
-			logger.error(" -- ERRO: elemento: '" + element.toString() + "' NAO esta visivel na plataforma: '");
-			Assert.fail(LocalDateTime.now() + " -- O elemento: " + element.toString() + "NAO esta visivel' em tela.");
+		} catch (ElementNotVisibleException|TimeoutException|NoSuchElementException e) {
+			logger.error(e.getMessage());
+			Assert.fail(LocalDateTime.now() + " " + e.getMessage() + " " + element);
 		}
 
 	}

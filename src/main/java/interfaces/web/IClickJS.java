@@ -22,9 +22,9 @@ public interface IClickJS {
 	static Logger logger = LogWeb.getLogger(IClickJS.class);
 	long TIMEOUT = 40;
 
-	default void clicarJavascript(By elemento) {
+	default void clickJavascript(By elemento) {
 		try {
-			logger.info(String.format("Realizar a ação do método [clicarJavascript] com o elemento [%s].", elemento));
+			logger.info(String.format("Do method [clicarJavascript] with the element [%s].", elemento));
 			JavascriptExecutor executor = (JavascriptExecutor) DriverWeb.getDriver();
 			DriverWeb.getDriver().manage().timeouts().pageLoadTimeout(TIMEOUT, TimeUnit.SECONDS);
 			WebDriverWait wait = new WebDriverWait(DriverWeb.getDriver(), TIMEOUT);
@@ -49,9 +49,9 @@ public interface IClickJS {
 		}
 	}
 	
-	default void clicarJavascript(WebElement elemento, String descricaoDoPasso) {
+	default void clickJavascript(WebElement elemento) {
 		try {
-			logger.info(String.format("Realizar a ação do método [clicarJavascript] com o elemento [%s].", elemento));
+			logger.info(String.format("Do method [clicarJavascript] with the element [%s].", elemento));
 			JavascriptExecutor executor = (JavascriptExecutor) DriverWeb.getDriver();
 			DriverWeb.getDriver().manage().timeouts().pageLoadTimeout(TIMEOUT, TimeUnit.SECONDS);
 			WebDriverWait wait = new WebDriverWait(DriverWeb.getDriver(), TIMEOUT);
@@ -78,7 +78,7 @@ public interface IClickJS {
 	
 	default void clicarJavascriptPorId(String id){
 		try {
-			logger.info(String.format("Realizar a ação do método [clicarJavascript] com o elemento de id [%s].", id));
+			logger.info(String.format("Do method [clicarJavascript] with the element de id [%s].", id));
 			JavascriptExecutor executor = (JavascriptExecutor) DriverWeb.getDriver();
 			WebDriverWait wait = new WebDriverWait(DriverWeb.getDriver(), 5);
 			By elemento = By.id(id);

@@ -25,96 +25,42 @@ public interface IClick {
 	static Logger logger = LogWeb.getLogger(IClick.class);
 	long TIMEOUT = 40;
 
-	default Boolean clicar(By elemento) {
+	default Boolean click(WebElement elemento) {
 		try {
-			logger.info(String.format("Realizar a ação do método [clicar] com o elemento [%s].", elemento));
-			DriverWeb.getDriver().manage().timeouts().pageLoadTimeout(TIMEOUT, TimeUnit.SECONDS);
+			logger.info(String.format("Do method [click] with the element [%s].", elemento));
 			new WebDriverWait(DriverWeb.getDriver(), TIMEOUT).until(ExpectedConditions.elementToBeClickable(elemento))
 					.click();
-		} catch (NoSuchElementException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO encontrado.'");
-			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + elemento + "' em tela.");
-		} catch (TimeoutException e) {
-			logger.error(" -- ERRO: Tempo excedido para encontrar elemento: '" + elemento);
-			Assert.fail(LocalDateTime.now() + " Tempo excedido para encontrar o elemento: '" + elemento + "' em tela.");
-		} catch (ElementNotVisibleException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO esta visivel na plataforma: '");
-			Assert.fail(LocalDateTime.now() + " -- O elemento: " + elemento + "NAO esta visivel' em tela.");
-		} catch (Exception e) {
-			logger.error(" -- ERRO: erro ao clicar no elemento:" + elemento);
-			Assert.fail(LocalDateTime.now() + "erro ao clicar no elemento:" + elemento);
+		} catch (NoSuchElementException|TimeoutException|ElementNotVisibleException e) {
+			logger.error(e.getMessage());
+			Assert.fail(LocalDateTime.now() + " " +e.getMessage() +" "+ elemento );
 		}
 		return true;
 	}
-
-	default Boolean clicarWebElement(WebElement elemento) {
-		try {
-			logger.info(String.format("Realizar a ação do método [clicarWebElement] com o elemento [%s].", elemento));
-			new WebDriverWait(DriverWeb.getDriver(), TIMEOUT).until(ExpectedConditions.elementToBeClickable(elemento))
-					.click();
-		} catch (NoSuchElementException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO encontrado.'");
-			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + elemento + "' em tela.");
-		} catch (TimeoutException e) {
-			logger.error(" -- ERRO: Tempo excedido para encontrar elemento: '" + elemento);
-			Assert.fail(LocalDateTime.now() + " Tempo excedido para encontrar o elemento: '" + elemento + "' em tela.");
-		} catch (ElementNotVisibleException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO esta visivel na plataforma: '");
-			Assert.fail(LocalDateTime.now() + " -- O elemento: " + elemento + "NAO esta visivel' em tela.");
-		} catch (Exception e) {
-			logger.error(" -- ERRO: erro ao clicar no elemento:" + elemento);
-			Assert.fail(LocalDateTime.now() + "erro ao clicar no elemento:" + elemento);
-		}
-		return true;
+	
+	default Boolean click(By elemento) {
+		return click((WebElement)elemento);
 	}
-
-	default void duploCliqueNoElemento(By elemento) {
+	
+	default void clickTwice(WebElement elemento) {
 		Actions action = new Actions(DriverWeb.getDriver());
 		try {
-			logger.info(String.format("Realizar a ação do método [duploCliqueNoElemento] com o elemento [%s].", elemento));
-			DriverWeb.getDriver().manage().timeouts().pageLoadTimeout(TIMEOUT, TimeUnit.SECONDS);
-			action.doubleClick(new WebDriverWait(DriverWeb.getDriver(), TIMEOUT)
-					.until(ExpectedConditions.elementToBeClickable(elemento)));			
-		} catch (NoSuchElementException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO encontrado.'");
-			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + elemento + "' em tela.");
-		} catch (TimeoutException e) {
-			logger.error(" -- ERRO: Tempo excedido para encontrar elemento: '" + elemento);
-			Assert.fail(LocalDateTime.now() + " Tempo excedido para encontrar o elemento: '" + elemento + "' em tela.");
-		} catch (ElementNotVisibleException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO esta visivel na plataforma: '");
-			Assert.fail(LocalDateTime.now() + " -- O elemento: " + elemento + "NAO esta visivel' em tela.");
-		} catch (Exception e) {
-			logger.error(" -- ERRO: erro ao clicar no elemento:" + elemento);
-			Assert.fail(LocalDateTime.now() + "erro ao clicar no elemento:" + elemento);
-		}
-	}
-
-	default void duploCliqueNoElemento(WebElement elemento) {
-		Actions action = new Actions(DriverWeb.getDriver());
-		try {
-			logger.info(String.format("Realizar a ação do método [duploCliqueNoElemento] com o elemento [%s].", elemento));
+			logger.info(String.format("Do method [clickTwice] with the element [%s].", elemento));
 			DriverWeb.getDriver().manage().timeouts().pageLoadTimeout(TIMEOUT, TimeUnit.SECONDS);
 			action.doubleClick(new WebDriverWait(DriverWeb.getDriver(), TIMEOUT)
 					.until(ExpectedConditions.elementToBeClickable(elemento)));		
-		} catch (NoSuchElementException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO encontrado.'");
-			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + elemento + "' em tela.");
-		} catch (TimeoutException e) {
-			logger.error(" -- ERRO: Tempo excedido para encontrar elemento: '" + elemento);
-			Assert.fail(LocalDateTime.now() + " Tempo excedido para encontrar o elemento: '" + elemento + "' em tela.");
-		} catch (ElementNotVisibleException e) {
-			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO esta visivel na plataforma: '");
-			Assert.fail(LocalDateTime.now() + " -- O elemento: " + elemento + "NAO esta visivel' em tela.");
 		} catch (Exception e) {
-			logger.error(" -- ERRO: erro ao clicar no elemento:" + elemento);
-			Assert.fail(LocalDateTime.now() + "erro ao clicar no elemento:" + elemento);
+			logger.error(e.getMessage());
+			Assert.fail(LocalDateTime.now()+ e.getMessage() + " " + elemento );
 		}
 	}
-
-	default void submeterFormulario(By elemento) {
+	
+	default void clickTwice(By elemento) {
+		clickTwice((WebElement)elemento);
+	}
+	
+	default void submitForm(By elemento) {
 		try {
-			logger.info(String.format("Realizar a ação do método [submeterFormulario] com o elemento [%s].", elemento));
+			logger.info(String.format("Do method [submitForm] with the element [%s].", elemento));
 			DriverWeb.getDriver().manage().timeouts().pageLoadTimeout(TIMEOUT, TimeUnit.SECONDS);
 			DriverWeb.getDriver().findElement(elemento).submit();		
 		} catch (NoSuchElementException e) {
@@ -132,9 +78,9 @@ public interface IClick {
 		}
 	}
 
-	default void submeterFormulario(WebElement elemento, String descricaoDoPasso) {
+	default void submitForm(WebElement elemento) {
 		try {
-			logger.info(String.format("Realizar a ação do método [submeterFormulario] com o elemento [%s].", elemento));
+			logger.info(String.format("Do method [submitForm] with the element [%s].", elemento));
 			DriverWeb.getDriver().manage().timeouts().pageLoadTimeout(TIMEOUT, TimeUnit.SECONDS);
 			elemento.submit();
 		} catch (NoSuchElementException e) {
@@ -155,7 +101,7 @@ public interface IClick {
 
 	default void duploCliqueOndeEstiverOFocoDoMouse(By elemento) {
 		try {
-			logger.info(String.format("Realizar a ação do método [duploCliqueOndeEstiverOFocoDoMouse] com o elemento [%s].", elemento));
+			logger.info(String.format("Do method [duploCliqueOndeEstiverOFocoDoMouse] with the element [%s].", elemento));
 			Actions action = new Actions(DriverWeb.getDriver());
 			DriverWeb.getDriver().manage().timeouts().pageLoadTimeout(TIMEOUT, TimeUnit.SECONDS);
 			action.moveToElement(new WebDriverWait(DriverWeb.getDriver(), TIMEOUT)
@@ -177,7 +123,7 @@ public interface IClick {
 
 	default void duploCliqueOndeEstiverOFocoDoMouse(WebElement elemento) {
 		try {
-			logger.info(String.format("Realizar a ação do método [duploCliqueOndeEstiverOFocoDoMouse] com o elemento [%s].",
+			logger.info(String.format("Do method [duploCliqueOndeEstiverOFocoDoMouse] with the element [%s].",
 					elemento));
 			Actions action = new Actions(DriverWeb.getDriver());
 			DriverWeb.getDriver().manage().timeouts().pageLoadTimeout(TIMEOUT, TimeUnit.SECONDS);
@@ -204,7 +150,7 @@ public interface IClick {
 	}
 
 	default Boolean superClick(WebElement element) {
-		logger.info(String.format("Realizar a ação do método [superClick] com o elemento [%s].", element));
+		logger.info(String.format("Do method [superClick] with the element [%s].", element));
 		WebDriver driver = DriverWeb.getDriver();
 		JavascriptExecutor executor = (JavascriptExecutor) DriverWeb.getDriver();
 		WebDriverWait wait = new WebDriverWait(driver, TIMEOUT);
@@ -266,15 +212,15 @@ public interface IClick {
 						"} return absoluteXPath(arguments[0]);", we));
 	}
 
-	default void clicarAleatoriamente(By elemento) {
+	default void clickRandom(By elemento) {
 		try {
-			logger.info(String.format("Realizar a ação do método [clicarAleatoriamente] com o elemento [%s].", elemento));
+			logger.info(String.format("Do method [clicarAleatoriamente] with the element [%s].", elemento));
 			List<WebElement> elementos = DriverWeb.getDriver().findElements(elemento);
 			WebElement elementoSelecionado = elementos.get(new Random().nextInt(elementos.size()));
 			logger.info(String.format("Elemento selecionado: %s", elementoSelecionado));
-			clicarWebElement(elementoSelecionado);			
+			click(elementoSelecionado);			
 		} catch (IllegalArgumentException e) {
-			logger.error(" -- ERRO: Argumento por inddex não encontrado para o elemento: '" + elemento);
+			logger.error(e.getMessage()+" " + elemento);
 			Assert.fail(LocalDateTime.now() + " Argumento por inddex não encontrado para o elemento: '" + elemento + "' em tela.");
 		}
 	}

@@ -26,7 +26,7 @@ public interface IValidationsWeb extends IGet {
 			logger.info(String.format("Realizar a ação do método [validarContemMensagem] com elemento [%s] e texto [%s].",
 					elemento, textoOriginal));
 			String textoDeComparacao = null;
-			textoDeComparacao = obterTexto(elemento);
+			textoDeComparacao = getText(elemento);
 			if (!textoOriginal.equalsIgnoreCase(textoDeComparacao)) {
 				logger.info(
 						String.format("O texto obtido do elemento [%s] é diferente do esperado: [%s]", textoDeComparacao, textoOriginal));
