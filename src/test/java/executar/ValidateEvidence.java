@@ -3,7 +3,7 @@ package executar;
 import java.io.File;
 import java.util.Arrays;
 
-public class ValidarEvidencias {
+public class ValidateEvidence {
 	
 	
 	/**

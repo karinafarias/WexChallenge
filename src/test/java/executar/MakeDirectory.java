@@ -2,7 +2,7 @@ package executar;
 
 import java.io.File;
 
-public class CriarDiretorio {
+public class MakeDirectory {
 
 	private static final String caminhoDiretorio = System.getProperty("user.dir").concat(File.separator).concat("Evidencias");
 	

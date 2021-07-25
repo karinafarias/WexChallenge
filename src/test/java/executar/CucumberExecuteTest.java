@@ -22,18 +22,18 @@ import enums.Browser;
 				"json:src/test/resources/relatorios/cucumber-reports/cucumber.json",
 				"junit:src/test/resources/relatorios/cucumber-reports/Cucumber.xml"}, 
 		glue = {""},// 
-		tags = "", //
+		tags = "@S1", //
 		snippets = SnippetType.CAMELCASE,
 		monochrome = true, 
-		dryRun = false, 
+		dryRun = true, 
 		strict = false)
 public class CucumberExecuteTest {
 
 	@BeforeClass
 	public static void setarConfiguracoes() {
 		DriverWeb.getDriver(Browser.CHROME, true);
-		new CriarDiretorio().validarDiretorio();
-		new ValidarEvidencias().deletarPrints();
+		new MakeDirectory().validarDiretorio();
+		new ValidateEvidence().deletarPrints();
 	}
 
 	@AfterClass

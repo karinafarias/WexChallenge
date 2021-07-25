@@ -1,190 +1,99 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Saude/CentralDeAtendimento/Atendimento-11004.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("testing.feature");
 formatter.feature({
-  "comments": [
-    {
-      "line": 1,
-      "value": "#enconding: utf-8"
-    },
-    {
-      "line": 2,
-      "value": "#Auto generated Octane revision tag"
-    }
-  ],
-  "line": 4,
-  "name": "Apollo - Central de Atendimento",
-  "description": "Como um analista ,\nQuero que registre um atendimento na central e efetue a Autorização\nPara que tenhamos os atendimentos devidamente registrados",
-  "id": "apollo---central-de-atendimento",
+  "line": 2,
+  "name": "Wex challenge",
+  "description": "",
+  "id": "wex-challenge",
   "keyword": "Feature",
   "tags": [
     {
-      "line": 3,
-      "name": "@TID11004REV0.1.0"
+      "line": 1,
+      "name": "@WexChallenge"
     }
   ]
 });
-formatter.before({
-  "duration": 749056532,
-  "status": "passed"
-});
 formatter.background({
-  "line": 9,
+  "line": 3,
   "name": "",
   "description": "",
   "type": "background",
   "keyword": "Background"
 });
 formatter.step({
-  "line": 10,
-  "name": "que acesso o sistema Apollo",
+  "line": 4,
+  "name": "Open Browser on \"www.google.com\"",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 11,
-  "name": "preencho \"p0642971\" e \"AYHQoR6g8Jqi\"",
+  "line": 5,
+  "name": "Search for \"Amazon Brasil\" and Search",
   "keyword": "And "
 });
 formatter.step({
-  "line": 12,
-  "name": "o sistema apresenta a tela inicial com a mensagem \"Seja bem-vindo ao novo Sistema Saúde\"",
+  "line": 6,
+  "name": "Navigate to \"www.amazon.com.br\" Through The Search Page",
   "keyword": "And "
 });
-formatter.match({
-  "location": "SistemaApollo.que_acesso_o_sistema_Apollo()"
+formatter.step({
+  "line": 7,
+  "name": "Search For \"Iphone\" Using The Search Bar",
+  "keyword": "And "
 });
+formatter.match({});
 formatter.result({
-  "duration": 1022791211,
-  "status": "passed"
+  "status": "undefined"
 });
-formatter.match({
-  "arguments": [
-    {
-      "val": "p0642971",
-      "offset": 10
-    },
-    {
-      "val": "AYHQoR6g8Jqi",
-      "offset": 23
-    }
-  ],
-  "location": "EfetuarLogin.preencho_e(String,String)"
-});
+formatter.match({});
 formatter.result({
-  "duration": 1352993124,
-  "status": "passed"
+  "status": "undefined"
 });
-formatter.match({
-  "arguments": [
-    {
-      "val": "Seja bem-vindo ao novo Sistema Saúde",
-      "offset": 51
-    }
-  ],
-  "location": "SistemaApollo.apresentaMensagemInicial(String)"
-});
+formatter.match({});
 formatter.result({
-  "duration": 2062189609,
-  "status": "passed"
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
 });
 formatter.scenario({
-  "line": 15,
-  "name": "Consultar Protocolo",
+  "line": 10,
+  "name": "80% Of Shown Products Should Be Exclusively The Searched Product",
   "description": "",
-  "id": "apollo---central-de-atendimento;consultar-protocolo",
+  "id": "wex-challenge;80%-of-shown-products-should-be-exclusively-the-searched-product",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 14,
-      "name": "@Saude"
-    },
-    {
-      "line": 14,
-      "name": "@CentralDeAtendimento"
-    },
-    {
-      "line": 14,
-      "name": "@ConsultarProtocolo"
+      "line": 9,
+      "name": "@S1"
     }
   ]
 });
 formatter.step({
-  "line": 16,
-  "name": "opto por acessar a \"Central de Atendimentos\"",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 17,
-  "name": "opto por selecionar \"Atendimentos\" -\u003e \"Pesquisar Atendimento\"",
+  "line": 11,
+  "name": "Count The Total List Of Found Products",
   "keyword": "And "
 });
 formatter.step({
-  "line": 18,
-  "name": "opto por preencher um número de protocolo",
+  "line": 12,
+  "name": "Count The Total Of \"Iphone\" Items Found",
   "keyword": "And "
 });
 formatter.step({
-  "line": 19,
-  "name": "opto por clicar em Pesquisar",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 20,
-  "name": "o sistema retorna as informações referente ao protocolo solicitado",
+  "line": 13,
+  "name": "Make Sure At Least \"80\"% Of Items Found are \"Iphone\"",
   "keyword": "Then "
 });
-formatter.match({
-  "arguments": [
-    {
-      "val": "Central de Atendimentos",
-      "offset": 20
-    }
-  ],
-  "location": "MenuInicial.acessaMenuIcone(String)"
-});
+formatter.match({});
 formatter.result({
-  "duration": 9244956840,
-  "status": "passed"
+  "status": "undefined"
 });
-formatter.match({
-  "arguments": [
-    {
-      "val": "Atendimentos",
-      "offset": 21
-    },
-    {
-      "val": "Pesquisar Atendimento",
-      "offset": 39
-    }
-  ],
-  "location": "MenuLateral.selecionarMenuHover(String,String)"
-});
+formatter.match({});
 formatter.result({
-  "duration": 29125779239,
-  "status": "passed"
+  "status": "undefined"
 });
-formatter.match({
-  "location": "IniciarAtendimento.preencherNumeroProtocolo()"
-});
+formatter.match({});
 formatter.result({
-  "duration": 3039958247,
-  "status": "passed"
-});
-formatter.match({
-  "location": "IniciarAtendimento.consultarAtendimento()"
-});
-formatter.result({
-  "duration": 789118685,
-  "status": "passed"
-});
-formatter.match({
-  "location": "IniciarAtendimento.valdiarNumeroProtocoloNaGrid()"
-});
-formatter.result({
-  "duration": 1411544005,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 2792826528,
-  "status": "passed"
+  "status": "undefined"
 });
 });
