@@ -1,0 +1,64 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 5,
+        "name": "Realizar login",
+        "description": "",
+        "id": "login;realizar-login",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 673552933,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "que acesse o sistema do google",
+            "match": {
+              "location": "LoginStep.queAcesseOSistemaDoGoogle()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 14065,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "informar o email e senha",
+            "match": {
+              "location": "LoginStep.informarOEmailESenha()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 12609,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "o sistema apresenta o resultado esperado",
+            "match": {
+              "location": "LoginStep.oSistemaApresentaOResultadoEsperado()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 4,
+            "name": "@Test"
+          }
+        ]
+      }
+    ],
+    "name": "Login",
+    "description": "",
+    "id": "login",
+    "keyword": "Feature",
+    "uri": "testing.feature"
+  }
+]

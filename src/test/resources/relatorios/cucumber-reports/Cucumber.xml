@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="51.591214">
+<testcase classname="Apollo - Central de Atendimento" name="Consultar Protocolo" time="51.591214">
+<system-out><![CDATA[Given que acesso o sistema Apollo...........................................passed
+And preencho "p0642971" e "AYHQoR6g8Jqi"....................................passed
+And o sistema apresenta a tela inicial com a mensagem "Seja bem-vindo ao novo Sistema Saúde".passed
+When opto por acessar a "Central de Atendimentos"...........................passed
+And opto por selecionar "Atendimentos" -> "Pesquisar Atendimento"...........passed
+And opto por preencher um número de protocolo...............................passed
+When opto por clicar em Pesquisar...........................................passed
+Then o sistema retorna as informações referente ao protocolo solicitado.....passed
+]]></system-out>
+</testcase>
+</testsuite>
