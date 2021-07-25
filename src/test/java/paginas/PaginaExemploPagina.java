@@ -14,7 +14,7 @@ public class PaginaExemploPagina extends ElementosExemplos implements InteracaoW
 	 */
 	
 	public void acessarSistema() {
-		abrirUrl(util.getUrl());
+		openUrl(util.getUrl());
 		esperarUrlSerCarregada(util.getUrl(), 10);
 	}
 	

@@ -21,8 +21,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import drivers.web.DriverWeb;
 import interfaces.log.LogWeb;
 
-public interface IClique {
-	static Logger logger = LogWeb.getLogger(IClique.class);
+public interface IClick {
+	static Logger logger = LogWeb.getLogger(IClick.class);
 	long TIMEOUT = 40;
 
 	default Boolean clicar(By elemento) {

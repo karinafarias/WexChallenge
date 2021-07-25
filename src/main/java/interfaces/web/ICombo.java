@@ -19,7 +19,7 @@ import org.openqa.selenium.support.ui.UnexpectedTagNameException;
 import drivers.web.DriverWeb;
 import interfaces.log.LogWeb;
 
-public interface ICombo extends IEspera {
+public interface ICombo extends IWait {
 	static Logger logger = LogWeb.getLogger(ICombo.class);
 
 

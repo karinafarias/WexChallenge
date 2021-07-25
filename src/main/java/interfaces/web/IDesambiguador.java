@@ -11,7 +11,7 @@ import org.openqa.selenium.By;
 import drivers.web.DriverWeb;
 import interfaces.log.LogWeb;
 
-public interface IDesambiguador extends IEspera {
+public interface IDesambiguador extends IWait {
 	static Logger logger = LogWeb.getLogger(IDesambiguador.class);
 	long TIMEOUT = 40;
 

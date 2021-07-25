@@ -18,8 +18,8 @@ import org.openqa.selenium.WebElement;
 
 import interfaces.log.LogWeb;
 
-public interface IValidacoesWeb extends IObter {
-	static Logger logger = LogWeb.getLogger(IValidacoesWeb.class);
+public interface IValidationsWeb extends IGet {
+	static Logger logger = LogWeb.getLogger(IValidationsWeb.class);
 
 	default void validarMensagem(String textoOriginal, By elemento) {
 		try {

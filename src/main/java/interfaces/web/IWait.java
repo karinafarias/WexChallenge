@@ -20,8 +20,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import drivers.web.DriverWeb;
 import interfaces.log.LogWeb;
 
-public interface IEspera {
-	static Logger logger = LogWeb.getLogger(IEspera.class);
+public interface IWait {
+	static Logger logger = LogWeb.getLogger(IWait.class);
 	long TIMEOUT = 40;
 
 	default void esperarSerClicavel(By elemento, int tempoEmSegundos) {
@@ -202,7 +202,7 @@ public interface IEspera {
 			WebDriverWait wait = new WebDriverWait(DriverWeb.getDriver(), tempoEmSegundos);
 			wait.until(ExpectedConditions.visibilityOf(DriverWeb.getDriver().findElement(elemento)));
 			logger.info(" Realizou a ação do método [esperarVisibilidadeDoElemento]"
-					+ " da classe " + IEspera.class.toString()+ " por  " + "[ " + tempoEmSegundos + " ]" + "segundos");			
+					+ " da classe " + IWait.class.toString()+ " por  " + "[ " + tempoEmSegundos + " ]" + "segundos");			
 		} catch (NoSuchElementException e) {
 			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO encontrado.'");
 			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + elemento + "' em tela.");

@@ -16,9 +16,9 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import drivers.web.DriverWeb;
 import interfaces.log.LogWeb;
 
-public interface IMoverJS {
+public interface IMoveJS {
 	
-	static Logger logger = LogWeb.getLogger(IMoverJS.class);
+	static Logger logger = LogWeb.getLogger(IMoveJS.class);
 	
 	default Boolean moverParaOelementoJavascript(By elemento) {
 		try {

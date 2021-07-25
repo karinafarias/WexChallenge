@@ -12,8 +12,8 @@ import org.openqa.selenium.TimeoutException;
 import drivers.web.DriverWeb;
 import interfaces.log.LogWeb;
 
-public interface IProcurar {
-	static Logger logger = LogWeb.getLogger(IProcurar.class);
+public interface ISearch {
+	static Logger logger = LogWeb.getLogger(ISearch.class);
 
 
 	default boolean procurarElemento(By elemento) {

@@ -13,8 +13,8 @@ import org.openqa.selenium.TimeoutException;
 import drivers.web.DriverWeb;
 import interfaces.log.LogWeb;
 
-public interface IObterJS {
-	static Logger logger = LogWeb.getLogger(IObterJS.class);
+public interface IGetJS {
+	static Logger logger = LogWeb.getLogger(IGetJS.class);
 	
 	default String obterValorCssJavascriptPorId(String idDoElemento) {
 		String value = null;

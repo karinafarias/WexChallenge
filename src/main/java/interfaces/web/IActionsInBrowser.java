@@ -18,13 +18,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import drivers.web.DriverWeb;
 import interfaces.log.LogWeb;
 
-public interface IAcoesBrowser {
+public interface IActionsInBrowser {
 	
-	static Logger logger = LogWeb.getLogger(IAcoesBrowser.class);
+	static Logger logger = LogWeb.getLogger(IActionsInBrowser.class);
 	
-	default Boolean verificaDialogUrl() {
+	default Boolean isAlertPresent() {
 		logger.info(
-				"Realizar a ação do método [verificaDialogUrl] da classe para validar se o navegador apresentou a alerta na tela.");
+				"Realizar a ação do método [isAlertPresent] da classe para validar se o navegador apresentou a alerta na tela.");
 		boolean retorno = false;
 		WebDriverWait wait = new WebDriverWait(DriverWeb.getDriver(), 100 /* timeout in seconds */);
 		if (wait.until(ExpectedConditions.alertIsPresent()) == null) {
@@ -36,13 +36,13 @@ public interface IAcoesBrowser {
 		return retorno;
 	}
 
-	default void abrirUrl(String url) {
+	default void openUrl(String url) {
 		try {
-			logger.info(String.format("Realizar a ação do método [abrirUrl] para acessar [%s].", url));
+			logger.info(String.format("Realizar a ação do método [openUrl] para acessar [%s].", url));
 			DriverWeb.getDriver().get(url);
 		} catch (Exception e) {
-			logger.error(" -- ERRO: erro ao abrir url: " + url);
-			Assert.fail(LocalDateTime.now() + "erro ao abrir url: " + url);
+			logger.error(e.getMessage()+" " + url);
+			Assert.fail(LocalDateTime.now() +" "+ e.getMessage() +" "+ url);
 		}
 	}
 

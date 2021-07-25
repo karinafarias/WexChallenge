@@ -18,8 +18,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import drivers.web.DriverWeb;
 import interfaces.log.LogWeb;
 
-public interface ICliqueJS {
-	static Logger logger = LogWeb.getLogger(ICliqueJS.class);
+public interface IClickJS {
+	static Logger logger = LogWeb.getLogger(IClickJS.class);
 	long TIMEOUT = 40;
 
 	default void clicarJavascript(By elemento) {

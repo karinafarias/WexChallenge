@@ -15,8 +15,8 @@ import org.openqa.selenium.WebElement;
 import drivers.web.DriverWeb;
 import interfaces.log.LogWeb;
 
-public interface IEscreverJS {
-	static Logger logger = LogWeb.getLogger(IEscreverJS.class);
+public interface IWriteJS {
+	static Logger logger = LogWeb.getLogger(IWriteJS.class);
 
 	
 	default void escreverJavascript(By elemento, String texto) {
