@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("testing.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("SearchInAmazon.feature");
 formatter.feature({
   "line": 2,
   "name": "Wex challenge",
@@ -39,21 +39,57 @@ formatter.step({
   "name": "Search For \"Iphone\" Using The Search Bar",
   "keyword": "And "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.match({
+  "arguments": [
+    {
+      "val": "www.google.com",
+      "offset": 17
+    }
+  ],
+  "location": "SearchInAmazonSteps.openBrowserOn(String)"
 });
-formatter.match({});
 formatter.result({
-  "status": "undefined"
+  "duration": 847177100,
+  "status": "passed"
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.match({
+  "arguments": [
+    {
+      "val": "Amazon Brasil",
+      "offset": 12
+    }
+  ],
+  "location": "SearchInAmazonSteps.searchForAndSearch(String)"
 });
-formatter.match({});
 formatter.result({
-  "status": "undefined"
+  "duration": 2221829700,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "www.amazon.com.br",
+      "offset": 13
+    }
+  ],
+  "location": "SearchInAmazonSteps.navigateToThroughTheSearchPage(String)"
+});
+formatter.result({
+  "duration": 40698986100,
+  "error_message": "java.lang.AssertionError: 2021-07-25T22:46:02.421 Expected condition failed: waiting for element to be clickable: By.xpath: //link/..//a[@href\u003d\u0027https://www.amazon.com.br\u0027] (tried for 40 second(s) with 500 milliseconds interval) By.xpath: //link/..//a[@href\u003d\u0027https://www.amazon.com.br\u0027]\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat interfaces.web.IClick.click(IClick.java:48)\r\n\tat paginas.PageGoogle.navigateTo(PageGoogle.java:26)\r\n\tat steps.SearchInAmazonSteps.navigateToThroughTheSearchPage(SearchInAmazonSteps.java:23)\r\n\tat ✽.And Navigate to \"www.amazon.com.br\" Through The Search Page(SearchInAmazon.feature:6)\r\n",
+  "status": "failed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Iphone",
+      "offset": 12
+    }
+  ],
+  "location": "SearchInAmazonSteps.searchForUsingTheSearchBar(String)"
+});
+formatter.result({
+  "status": "skipped"
 });
 formatter.scenario({
   "line": 10,
@@ -84,16 +120,38 @@ formatter.step({
   "name": "Make Sure At Least \"80\"% Of Items Found are \"Iphone\"",
   "keyword": "Then "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.match({
+  "location": "SearchInAmazonSteps.countTheTotalListOfFoundProducts()"
 });
-formatter.match({});
 formatter.result({
-  "status": "undefined"
+  "status": "skipped"
 });
-formatter.match({});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Iphone",
+      "offset": 20
+    }
+  ],
+  "location": "SearchInAmazonSteps.countTheTotalOfItemsFound(String)"
+});
 formatter.result({
-  "status": "undefined"
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "80",
+      "offset": 20
+    },
+    {
+      "val": "Iphone",
+      "offset": 45
+    }
+  ],
+  "location": "SearchInAmazonSteps.makeSureAtLeastOfItemsFoundAre(String,String)"
+});
+formatter.result({
+  "status": "skipped"
 });
 });

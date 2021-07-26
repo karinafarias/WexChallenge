@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="1" tests="1" time="0">
-<testcase classname="Wex challenge" name="80% Of Shown Products Should Be Exclusively The Searched Product" time="0">
-<skipped><![CDATA[Given Open Browser on "www.google.com"......................................undefined
-And Search for "Amazon Brasil" and Search...................................undefined
-And Navigate to "www.amazon.com.br" Through The Search Page.................undefined
-And Search For "Iphone" Using The Search Bar................................undefined
-And Count The Total List Of Found Products..................................undefined
-And Count The Total Of "Iphone" Items Found.................................undefined
-Then Make Sure At Least "80"% Of Items Found are "Iphone"...................undefined
-]]></skipped>
+<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="43.767993">
+<testcase classname="Wex challenge" name="80% Of Shown Products Should Be Exclusively The Searched Product" time="43.767993">
+<failure message="java.lang.AssertionError: 2021-07-25T22:46:02.421 Expected condition failed: waiting for element to be clickable: By.xpath: //link/..//a[@href='https://www.amazon.com.br'] (tried for 40 second(s) with 500 milliseconds interval) By.xpath: //link/..//a[@href='https://www.amazon.com.br']&#13;&#10;&#9;at org.junit.Assert.fail(Assert.java:88)&#13;&#10;&#9;at interfaces.web.IClick.click(IClick.java:48)&#13;&#10;&#9;at paginas.PageGoogle.navigateTo(PageGoogle.java:26)&#13;&#10;&#9;at steps.SearchInAmazonSteps.navigateToThroughTheSearchPage(SearchInAmazonSteps.java:23)&#13;&#10;&#9;at ✽.And Navigate to &quot;www.amazon.com.br&quot; Through The Search Page(SearchInAmazon.feature:6)&#13;&#10;"><![CDATA[Given Open Browser on "www.google.com"......................................passed
+And Search for "Amazon Brasil" and Search...................................passed
+And Navigate to "www.amazon.com.br" Through The Search Page.................failed
+And Search For "Iphone" Using The Search Bar................................skipped
+And Count The Total List Of Found Products..................................skipped
+And Count The Total Of "Iphone" Items Found.................................skipped
+Then Make Sure At Least "80"% Of Items Found are "Iphone"...................skipped
+
+StackTrace:
+java.lang.AssertionError: 2021-07-25T22:46:02.421 Expected condition failed: waiting for element to be clickable: By.xpath: //link/..//a[@href='https://www.amazon.com.br'] (tried for 40 second(s) with 500 milliseconds interval) By.xpath: //link/..//a[@href='https://www.amazon.com.br']
+	at org.junit.Assert.fail(Assert.java:88)
+	at interfaces.web.IClick.click(IClick.java:48)
+	at paginas.PageGoogle.navigateTo(PageGoogle.java:26)
+	at steps.SearchInAmazonSteps.navigateToThroughTheSearchPage(SearchInAmazonSteps.java:23)
+	at ✽.And Navigate to "www.amazon.com.br" Through The Search Page(SearchInAmazon.feature:6)
+]]></failure>
 </testcase>
 </testsuite>

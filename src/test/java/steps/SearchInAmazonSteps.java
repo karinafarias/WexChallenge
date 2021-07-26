@@ -3,25 +3,24 @@ package steps;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import paginas.PageGoogle;
 
 public class SearchInAmazonSteps {
-
+	PageGoogle pageGoogle = new PageGoogle();
+	
 @Given("^Open Browser on \"([^\"]*)\"$")
-public void openBrowserOn(String arg1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
+public void openBrowserOn(String url) {
+	pageGoogle.openGoogle(url);
 }
 
 @Given("^Search for \"([^\"]*)\" and Search$")
-public void searchForAndSearch(String arg1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
+public void searchForAndSearch(String text) {
+    pageGoogle.searchFor(text);
 }
 
 @Given("^Navigate to \"([^\"]*)\" Through The Search Page$")
-public void navigateToThroughTheSearchPage(String arg1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
+public void navigateToThroughTheSearchPage(String url) {
+    pageGoogle.navigateTo(url);
 }
 
 @Given("^Search For \"([^\"]*)\" Using The Search Bar$")

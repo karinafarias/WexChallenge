@@ -38,7 +38,16 @@ public interface IClick {
 	}
 	
 	default Boolean click(By elemento) {
-		return click((WebElement)elemento);
+		try {
+			logger.info(String.format("Do method [click] with element [%s].", elemento));
+			DriverWeb.getDriver().manage().timeouts().pageLoadTimeout(TIMEOUT, TimeUnit.SECONDS);
+			new WebDriverWait(DriverWeb.getDriver(), TIMEOUT).until(ExpectedConditions.elementToBeClickable(elemento))
+					.click();
+		} catch (NoSuchElementException|TimeoutException|ElementNotVisibleException e) {
+			logger.error(e.getMessage());
+			Assert.fail(LocalDateTime.now() + " " +e.getMessage() +" "+ elemento );
+		}
+		return true;
 	}
 	
 	default void clickTwice(WebElement elemento) {

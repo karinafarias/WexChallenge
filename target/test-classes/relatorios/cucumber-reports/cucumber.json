@@ -11,38 +11,74 @@
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 847177100,
+              "status": "passed"
             },
             "line": 4,
             "name": "Open Browser on \"www.google.com\"",
-            "match": {},
+            "match": {
+              "arguments": [
+                {
+                  "val": "www.google.com",
+                  "offset": 17
+                }
+              ],
+              "location": "SearchInAmazonSteps.openBrowserOn(String)"
+            },
             "keyword": "Given "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 2221829700,
+              "status": "passed"
             },
             "line": 5,
             "name": "Search for \"Amazon Brasil\" and Search",
-            "match": {},
+            "match": {
+              "arguments": [
+                {
+                  "val": "Amazon Brasil",
+                  "offset": 12
+                }
+              ],
+              "location": "SearchInAmazonSteps.searchForAndSearch(String)"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 40698986100,
+              "error_message": "java.lang.AssertionError: 2021-07-25T22:46:02.421 Expected condition failed: waiting for element to be clickable: By.xpath: //link/..//a[@href\u003d\u0027https://www.amazon.com.br\u0027] (tried for 40 second(s) with 500 milliseconds interval) By.xpath: //link/..//a[@href\u003d\u0027https://www.amazon.com.br\u0027]\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat interfaces.web.IClick.click(IClick.java:48)\r\n\tat paginas.PageGoogle.navigateTo(PageGoogle.java:26)\r\n\tat steps.SearchInAmazonSteps.navigateToThroughTheSearchPage(SearchInAmazonSteps.java:23)\r\n\tat ✽.And Navigate to \"www.amazon.com.br\" Through The Search Page(SearchInAmazon.feature:6)\r\n",
+              "status": "failed"
             },
             "line": 6,
             "name": "Navigate to \"www.amazon.com.br\" Through The Search Page",
-            "match": {},
+            "match": {
+              "arguments": [
+                {
+                  "val": "www.amazon.com.br",
+                  "offset": 13
+                }
+              ],
+              "location": "SearchInAmazonSteps.navigateToThroughTheSearchPage(String)"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "undefined"
+              "status": "skipped"
             },
             "line": 7,
             "name": "Search For \"Iphone\" Using The Search Bar",
-            "match": {},
+            "match": {
+              "arguments": [
+                {
+                  "val": "Iphone",
+                  "offset": 12
+                }
+              ],
+              "location": "SearchInAmazonSteps.searchForUsingTheSearchBar(String)"
+            },
             "keyword": "And "
           }
         ]
@@ -57,29 +93,51 @@
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "status": "skipped"
             },
             "line": 11,
             "name": "Count The Total List Of Found Products",
-            "match": {},
+            "match": {
+              "location": "SearchInAmazonSteps.countTheTotalListOfFoundProducts()"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "undefined"
+              "status": "skipped"
             },
             "line": 12,
             "name": "Count The Total Of \"Iphone\" Items Found",
-            "match": {},
+            "match": {
+              "arguments": [
+                {
+                  "val": "Iphone",
+                  "offset": 20
+                }
+              ],
+              "location": "SearchInAmazonSteps.countTheTotalOfItemsFound(String)"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "undefined"
+              "status": "skipped"
             },
             "line": 13,
             "name": "Make Sure At Least \"80\"% Of Items Found are \"Iphone\"",
-            "match": {},
+            "match": {
+              "arguments": [
+                {
+                  "val": "80",
+                  "offset": 20
+                },
+                {
+                  "val": "Iphone",
+                  "offset": 45
+                }
+              ],
+              "location": "SearchInAmazonSteps.makeSureAtLeastOfItemsFoundAre(String,String)"
+            },
             "keyword": "Then "
           }
         ],
@@ -95,7 +153,7 @@
     "description": "",
     "id": "wex-challenge",
     "keyword": "Feature",
-    "uri": "testing.feature",
+    "uri": "SearchInAmazon.feature",
     "tags": [
       {
         "line": 1,

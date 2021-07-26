@@ -24,7 +24,7 @@ public interface IActionsInBrowser {
 	
 	default Boolean isAlertPresent() {
 		logger.info(
-				"Realizar a ação do método [isAlertPresent] da classe para validar se o navegador apresentou a alerta na tela.");
+				"Do method [isAlertPresent] da classe para validar se o navegador apresentou a alerta na tela.");
 		boolean retorno = false;
 		WebDriverWait wait = new WebDriverWait(DriverWeb.getDriver(), 100 /* timeout in seconds */);
 		if (wait.until(ExpectedConditions.alertIsPresent()) == null) {
@@ -38,7 +38,7 @@ public interface IActionsInBrowser {
 
 	default void openUrl(String url) {
 		try {
-			logger.info(String.format("Realizar a ação do método [openUrl] para acessar [%s].", url));
+			logger.info(String.format("Do method [openUrl] to open [%s].", url));
 			DriverWeb.getDriver().get(url);
 		} catch (Exception e) {
 			logger.error(e.getMessage()+" " + url);
@@ -48,7 +48,7 @@ public interface IActionsInBrowser {
 
 	default void navegarUrl(String url) {
 		try {
-			logger.info(String.format("Realizar a ação do método [navegarUrl] com endereço [%s].", url));
+			logger.info(String.format("Do method [navegarUrl] com endereço [%s].", url));
 			DriverWeb.getDriver().navigate().to(url);
 		} catch (Exception e) {
 			logger.error(" -- ERRO: erro ao navegar para a url: " + url);
@@ -59,7 +59,7 @@ public interface IActionsInBrowser {
 	default String trocarProximaJanela() {
 		String indice = "Proximo";
 		String parentWindowHandler = "";
-		logger.info("Realizar a ação do método [trocarJanela] para a janela de título \"%s\".");
+		logger.info("Do method [trocarJanela] para a janela de título \"%s\".");
 		try {
 			parentWindowHandler = DriverWeb.getDriver().getWindowHandle(); // Store your parent window
 			String subWindowHandler = null;
@@ -81,7 +81,7 @@ public interface IActionsInBrowser {
 
 	default void trocarJanela(Integer indice) {
 		try {
-			logger.info(String.format("Realizar a ação do método [mudarAba] alterando para a %dº aba.", indice));
+			logger.info(String.format("Do method [mudarAba] alterando para a %dº aba.", indice));
 			Set<String> handles = DriverWeb.getDriver().getWindowHandles();
 			Object[] it = handles.toArray();
 			DriverWeb.getDriver().switchTo().window((String) it[indice]);
@@ -96,7 +96,7 @@ public interface IActionsInBrowser {
 
 	default void trocarJanela(String nameOrHandle) {
 		try {
-			logger.info(String.format("Realizar a ação do método [trocarJanela] para a janela de título \"%s\".",
+			logger.info(String.format("Do method [trocarJanela] para a janela de título \"%s\".",
 					nameOrHandle));
 			DriverWeb.getDriver().switchTo().window(nameOrHandle);
 		} catch (NoSuchElementException e) {
@@ -114,7 +114,7 @@ public interface IActionsInBrowser {
 	default void duplicarAba(int numero) {
 		try {
 			logger.info(
-					String.format("Realizar a ação do método [duplicarJanela] efetuando a copia da %dº janela.", numero));
+					String.format("Do method [duplicarJanela] efetuando a copia da %dº janela.", numero));
 
 			WebDriver driver = DriverWeb.getDriver();
 			DriverWeb.getDriver().switchTo()
@@ -130,7 +130,7 @@ public interface IActionsInBrowser {
 
 	default void mudarAba(int numero) {
 		try {
-			logger.info(String.format("Realizar a ação do método [mudarAba] alterando para a %dº aba.", numero));
+			logger.info(String.format("Do method [mudarAba] alterando para a %dº aba.", numero));
 			DriverWeb.getDriver().switchTo()
 					.window((String) DriverWeb.getDriver().getWindowHandles().toArray()[numero]);
 		} catch (NoSuchWindowException e) {
@@ -145,7 +145,7 @@ public interface IActionsInBrowser {
 
 	default void fecharAba(int numero) {
 		try {
-			logger.info(String.format("Realizar a ação do método [fecharJanela] com a %dº janela.", numero));
+			logger.info(String.format("Do method [fecharJanela] com a %dº janela.", numero));
 			DriverWeb.getDriver().switchTo().window((String) DriverWeb.getDriver().getWindowHandles().toArray()[numero])
 					.close();
 		} catch (NoSuchWindowException e) {
@@ -156,7 +156,7 @@ public interface IActionsInBrowser {
 
 	default void fecharAba(String janela) {
 		try {
-			logger.info(String.format("Realizar a ação do método [fecharJanela] com a janela de handle \"%s\".", janela));
+			logger.info(String.format("Do method [fecharJanela] com a janela de handle \"%s\".", janela));
 			DriverWeb.getDriver().switchTo().window(janela).close();
 		} catch (NoSuchWindowException e) {
 			logger.error(" -- ERRO: aba de numero: '" + janela + "' NAO encontrado.");
@@ -166,7 +166,7 @@ public interface IActionsInBrowser {
 
 	default void atualizarPagina() {
 		try {
-			logger.info("Realizar a ação do método [atualizarPagina].");
+			logger.info("Do method [atualizarPagina].");
 			DriverWeb.getDriver().navigate().refresh();
 		} catch (NoSuchWindowException e) {
 			logger.error(" -- ERRO: Ao realizar o refresh na página");

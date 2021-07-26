@@ -1,7 +1,7 @@
 package steps;
 
 import io.cucumber.java8.En;
-import paginas.PaginaExemploPagina;
+import paginas.PageGoogle;
 
 public class ExemploSteps implements En{
 
@@ -10,7 +10,7 @@ public class ExemploSteps implements En{
 	 * @author leonardoananias
 	 */
 	
-	private PaginaExemploPagina exemplo = new PaginaExemploPagina();
+	private PageGoogle exemplo = new PageGoogle();
 	/**
 	 * *********************************************************************************************************************************
 	 * 																																   *
@@ -18,8 +18,8 @@ public class ExemploSteps implements En{
 	 * 																																   *																																   *
 	 * ********************************************************************************************************************************/
 	public ExemploSteps() {
-		Given("que acesse o sistema", () -> {
-			exemplo.acessarSistema();
+		Given("^Open Browser on \"([^\"]*)\"$", (String url) -> {
+			exemplo.openGoogle(url);
 		});
 	}
 	

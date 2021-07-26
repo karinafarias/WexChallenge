@@ -84,10 +84,10 @@ public interface IWait {
 
 	default void waitUrlLoading(String url, int tempoEmSegundos) {
 		try {
-			logger.info(String.format("Realizar a ação do método [esperarUrlSerCarregada] com url [%s] por %d segundos",
+			logger.info(String.format("Do method [waitUrlLoading] with url [%s] for %d seconds",
 					url, tempoEmSegundos));
 			WebDriverWait wait = new WebDriverWait(DriverWeb.getDriver(), tempoEmSegundos);
-			wait.until(ExpectedConditions.urlToBe(url));
+			wait.until(ExpectedConditions.urlMatches(url));
 		} catch (TimeoutException e) {
 			logger.error(" -- ERRO: Tempo excedido para carregar a url: '" + url);
 			Assert.fail(LocalDateTime.now() + " Tempo excedido para carregar a url: '" + url + "' em tela.");

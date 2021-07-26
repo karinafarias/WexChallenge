@@ -25,13 +25,13 @@ import enums.Browser;
 		tags = "@S1", //
 		snippets = SnippetType.CAMELCASE,
 		monochrome = true, 
-		dryRun = true, 
+		dryRun = false, 
 		strict = false)
 public class CucumberExecuteTest {
 
 	@BeforeClass
 	public static void setarConfiguracoes() {
-		DriverWeb.getDriver(Browser.CHROME, true);
+		DriverWeb.getDriver(Browser.CHROME, false);
 		new MakeDirectory().validarDiretorio();
 		new ValidateEvidence().deletarPrints();
 	}
