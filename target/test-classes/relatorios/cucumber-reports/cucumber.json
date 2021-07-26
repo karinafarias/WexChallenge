@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 847177100,
+              "duration": 1084610100,
               "status": "passed"
             },
             "line": 4,
@@ -29,7 +29,7 @@
           },
           {
             "result": {
-              "duration": 2221829700,
+              "duration": 2300092300,
               "status": "passed"
             },
             "line": 5,
@@ -47,9 +47,8 @@
           },
           {
             "result": {
-              "duration": 40698986100,
-              "error_message": "java.lang.AssertionError: 2021-07-25T22:46:02.421 Expected condition failed: waiting for element to be clickable: By.xpath: //link/..//a[@href\u003d\u0027https://www.amazon.com.br\u0027] (tried for 40 second(s) with 500 milliseconds interval) By.xpath: //link/..//a[@href\u003d\u0027https://www.amazon.com.br\u0027]\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat interfaces.web.IClick.click(IClick.java:48)\r\n\tat paginas.PageGoogle.navigateTo(PageGoogle.java:26)\r\n\tat steps.SearchInAmazonSteps.navigateToThroughTheSearchPage(SearchInAmazonSteps.java:23)\r\n\tat ✽.And Navigate to \"www.amazon.com.br\" Through The Search Page(SearchInAmazon.feature:6)\r\n",
-              "status": "failed"
+              "duration": 1622399700,
+              "status": "passed"
             },
             "line": 6,
             "name": "Navigate to \"www.amazon.com.br\" Through The Search Page",
@@ -66,7 +65,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 1812019900,
+              "status": "passed"
             },
             "line": 7,
             "name": "Search For \"Iphone\" Using The Search Bar",
@@ -93,7 +93,9 @@
         "steps": [
           {
             "result": {
-              "status": "skipped"
+              "duration": 803000,
+              "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat steps.SearchInAmazonSteps.countTheTotalListOfFoundProducts(SearchInAmazonSteps.java:36)\r\n\tat ✽.And Count The Total List Of Found Products(SearchInAmazon.feature:11)\r\n",
+              "status": "pending"
             },
             "line": 11,
             "name": "Count The Total List Of Found Products",

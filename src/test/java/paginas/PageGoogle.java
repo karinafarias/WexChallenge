@@ -21,9 +21,9 @@ public class PageGoogle implements InteracaoWeb {
 
 	public void navigateTo(String url) {
 		if(!url.matches("[http{s}://]+")) {
-			url="https://"+url;
+			url="https://"+url+"/";
 		}
-		click(eleGoogle.getLinkOfUrl(url));
+		clickJavascript(eleGoogle.getLinkOfUrl(url));
 		
 	}
 	

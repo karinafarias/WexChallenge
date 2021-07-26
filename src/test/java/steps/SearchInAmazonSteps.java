@@ -3,10 +3,12 @@ package steps;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import paginas.PageAmazon;
 import paginas.PageGoogle;
 
 public class SearchInAmazonSteps {
 	PageGoogle pageGoogle = new PageGoogle();
+	PageAmazon pageAmazon = new PageAmazon();
 	
 @Given("^Open Browser on \"([^\"]*)\"$")
 public void openBrowserOn(String url) {
@@ -24,9 +26,8 @@ public void navigateToThroughTheSearchPage(String url) {
 }
 
 @Given("^Search For \"([^\"]*)\" Using The Search Bar$")
-public void searchForUsingTheSearchBar(String arg1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
+public void searchForUsingTheSearchBar(String text) {
+    pageAmazon.searchForInTheSearchBar(text);
 }
 
 @Given("^Count The Total List Of Found Products$")

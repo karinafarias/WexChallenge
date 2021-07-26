@@ -49,7 +49,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.openBrowserOn(String)"
 });
 formatter.result({
-  "duration": 847177100,
+  "duration": 1084610100,
   "status": "passed"
 });
 formatter.match({
@@ -62,7 +62,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.searchForAndSearch(String)"
 });
 formatter.result({
-  "duration": 2221829700,
+  "duration": 2300092300,
   "status": "passed"
 });
 formatter.match({
@@ -75,9 +75,8 @@ formatter.match({
   "location": "SearchInAmazonSteps.navigateToThroughTheSearchPage(String)"
 });
 formatter.result({
-  "duration": 40698986100,
-  "error_message": "java.lang.AssertionError: 2021-07-25T22:46:02.421 Expected condition failed: waiting for element to be clickable: By.xpath: //link/..//a[@href\u003d\u0027https://www.amazon.com.br\u0027] (tried for 40 second(s) with 500 milliseconds interval) By.xpath: //link/..//a[@href\u003d\u0027https://www.amazon.com.br\u0027]\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat interfaces.web.IClick.click(IClick.java:48)\r\n\tat paginas.PageGoogle.navigateTo(PageGoogle.java:26)\r\n\tat steps.SearchInAmazonSteps.navigateToThroughTheSearchPage(SearchInAmazonSteps.java:23)\r\n\tat ✽.And Navigate to \"www.amazon.com.br\" Through The Search Page(SearchInAmazon.feature:6)\r\n",
-  "status": "failed"
+  "duration": 1622399700,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -89,7 +88,8 @@ formatter.match({
   "location": "SearchInAmazonSteps.searchForUsingTheSearchBar(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 1812019900,
+  "status": "passed"
 });
 formatter.scenario({
   "line": 10,
@@ -124,7 +124,9 @@ formatter.match({
   "location": "SearchInAmazonSteps.countTheTotalListOfFoundProducts()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 803000,
+  "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat steps.SearchInAmazonSteps.countTheTotalListOfFoundProducts(SearchInAmazonSteps.java:36)\r\n\tat ✽.And Count The Total List Of Found Products(SearchInAmazon.feature:11)\r\n",
+  "status": "pending"
 });
 formatter.match({
   "arguments": [
