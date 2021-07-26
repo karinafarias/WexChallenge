@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<features version="1"><feature name="Wex challenge" path="src\test\resources\features\SearchInAmazon.feature" started="1627312185276" tag=""><file><![CDATA[@WexChallenge
+<features version="1"><feature name="Wex challenge" path="src\test\resources\features\SearchInAmazon.feature" started="1627335727734" tag=""><file><![CDATA[@WexChallenge
 Feature: Wex challenge
 Background:
 Given Open Browser on "www.google.com"
@@ -22,7 +22,4 @@ Then Make Sure The Converted Value Is Not Greater Than US"2000"
 @S3
 Scenario: Products Different Than The Searched Product Should Be Cheaper Than The Searched Product
 And Find Products Which Are Not "Iphone"
-Then Make Sure All Found Products Are Cheaper Than The Cheapest "Iphone"]]></file><scenarios><background><steps><step duration="1084610100" name="Given Open Browser on &quot;www.google.com&quot;" status="passed"/><step duration="2300092300" name="And Search for &quot;Amazon Brasil&quot; and Search" status="passed"/><step duration="1622399700" name="And Navigate to &quot;www.amazon.com.br&quot; Through The Search Page" status="passed"/><step duration="1812019900" name="And Search For &quot;Iphone&quot; Using The Search Bar" status="passed"/></steps></background><scenario name="80% Of Shown Products Should Be Exclusively The Searched Product"><steps><step duration="803000" name="And Count The Total List Of Found Products" status="pending"><error_message><![CDATA[cucumber.api.PendingException: TODO: implement me
-	at steps.SearchInAmazonSteps.countTheTotalListOfFoundProducts(SearchInAmazonSteps.java:36)
-	at ✽.And Count The Total List Of Found Products(SearchInAmazon.feature:11)
-]]></error_message></step><step duration="0" name="And Count The Total Of &quot;Iphone&quot; Items Found" status="skipped"/><step duration="0" name="Then Make Sure At Least &quot;80&quot;% Of Items Found are &quot;Iphone&quot;" status="skipped"/></steps></scenario></scenarios></feature></features>
+Then Make Sure All Found Products Are Cheaper Than The Cheapest "Iphone"]]></file><scenarios><background><steps><step duration="0" name="Given Open Browser on &quot;www.google.com&quot;" status="skipped"/><step duration="0" name="And Search for &quot;Amazon Brasil&quot; and Search" status="skipped"/><step duration="0" name="And Navigate to &quot;www.amazon.com.br&quot; Through The Search Page" status="skipped"/><step duration="0" name="And Search For &quot;Iphone&quot; Using The Search Bar" status="skipped"/></steps></background><scenario name="The Higher Price In The First Page Can't Be Greater Than U$2000"><steps><step duration="0" name="When Find The The More Expensive &quot;Iphone&quot; In Page" status="skipped"/><step duration="0" name="And Convert Its Value To USD Using &quot;https://exchangeratesapi.io/&quot; API" status="skipped"/><step duration="0" name="Then Make Sure The Converted Value Is Not Greater Than US&quot;2000&quot;" status="skipped"/></steps></scenario></scenarios></feature></features>

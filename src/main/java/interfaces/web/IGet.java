@@ -1,6 +1,8 @@
 package interfaces.web;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -22,6 +24,27 @@ public interface IGet {
 			logger.info(String.format("Realizar a ação do método [obterTexto] com elemento [%s].", elemento));
 			retorno = DriverWeb.getDriver().findElement(elemento).getText();
 			logger.info(String.format("Obteve o texto [%s].", retorno));
+		} catch (NoSuchElementException e) {
+			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO encontrado.'");
+			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + elemento + "' em tela.");
+		} catch (TimeoutException e) {
+			logger.error(" -- ERRO: Tempo excedido para encontrar elemento: '" + elemento);
+			Assert.fail(LocalDateTime.now() + " Tempo excedido para encontrar o elemento: '" + elemento + "' em tela.");
+		} catch (ElementNotVisibleException e) {
+			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO esta visivel na plataforma: '");
+			Assert.fail(LocalDateTime.now() + " -- O elemento: " + elemento + "NAO esta visivel' em tela.");
+		}
+		return retorno;
+	}
+
+	default List<String> getTexts(By elemento) {
+		List<String> retorno = new ArrayList<>();
+		try {
+			logger.info(String.format("Do method [getTexts] with element [%s].", elemento));
+			DriverWeb.getDriver().findElements(elemento).
+			stream().forEach(e->retorno.add(e.getText()));
+				
+			logger.info(String.format("Get texts [%s].", retorno));
 		} catch (NoSuchElementException e) {
 			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO encontrado.'");
 			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + elemento + "' em tela.");

@@ -49,8 +49,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.openBrowserOn(String)"
 });
 formatter.result({
-  "duration": 1084610100,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -62,8 +61,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.searchForAndSearch(String)"
 });
 formatter.result({
-  "duration": 2300092300,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -75,8 +73,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.navigateToThroughTheSearchPage(String)"
 });
 formatter.result({
-  "duration": 1622399700,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -88,72 +85,47 @@ formatter.match({
   "location": "SearchInAmazonSteps.searchForUsingTheSearchBar(String)"
 });
 formatter.result({
-  "duration": 1812019900,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.scenario({
-  "line": 10,
-  "name": "80% Of Shown Products Should Be Exclusively The Searched Product",
+  "line": 16,
+  "name": "The Higher Price In The First Page Can\u0027t Be Greater Than U$2000",
   "description": "",
-  "id": "wex-challenge;80%-of-shown-products-should-be-exclusively-the-searched-product",
+  "id": "wex-challenge;the-higher-price-in-the-first-page-can\u0027t-be-greater-than-u$2000",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 9,
-      "name": "@S1"
+      "line": 15,
+      "name": "@S2"
     }
   ]
 });
 formatter.step({
-  "line": 11,
-  "name": "Count The Total List Of Found Products",
+  "line": 17,
+  "name": "Find The The More Expensive \"Iphone\" In Page",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 18,
+  "name": "Convert Its Value To USD Using \"https://exchangeratesapi.io/\" API",
   "keyword": "And "
 });
 formatter.step({
-  "line": 12,
-  "name": "Count The Total Of \"Iphone\" Items Found",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Make Sure At Least \"80\"% Of Items Found are \"Iphone\"",
+  "line": 19,
+  "name": "Make Sure The Converted Value Is Not Greater Than US\"2000\"",
   "keyword": "Then "
 });
-formatter.match({
-  "location": "SearchInAmazonSteps.countTheTotalListOfFoundProducts()"
-});
+formatter.match({});
 formatter.result({
-  "duration": 803000,
-  "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat steps.SearchInAmazonSteps.countTheTotalListOfFoundProducts(SearchInAmazonSteps.java:36)\r\n\tat ✽.And Count The Total List Of Found Products(SearchInAmazon.feature:11)\r\n",
-  "status": "pending"
+  "status": "undefined"
 });
-formatter.match({
-  "arguments": [
-    {
-      "val": "Iphone",
-      "offset": 20
-    }
-  ],
-  "location": "SearchInAmazonSteps.countTheTotalOfItemsFound(String)"
-});
+formatter.match({});
 formatter.result({
-  "status": "skipped"
+  "status": "undefined"
 });
-formatter.match({
-  "arguments": [
-    {
-      "val": "80",
-      "offset": 20
-    },
-    {
-      "val": "Iphone",
-      "offset": 45
-    }
-  ],
-  "location": "SearchInAmazonSteps.makeSureAtLeastOfItemsFoundAre(String,String)"
-});
+formatter.match({});
 formatter.result({
-  "status": "skipped"
+  "status": "undefined"
 });
 });

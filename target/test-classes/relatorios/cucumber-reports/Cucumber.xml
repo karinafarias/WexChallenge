@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="1" tests="1" time="6.819925">
-<testcase classname="Wex challenge" name="80% Of Shown Products Should Be Exclusively The Searched Product" time="6.819925">
-<skipped><![CDATA[Given Open Browser on "www.google.com"......................................passed
-And Search for "Amazon Brasil" and Search...................................passed
-And Navigate to "www.amazon.com.br" Through The Search Page.................passed
-And Search For "Iphone" Using The Search Bar................................passed
-And Count The Total List Of Found Products..................................pending
-And Count The Total Of "Iphone" Items Found.................................skipped
-Then Make Sure At Least "80"% Of Items Found are "Iphone"...................skipped
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="1" tests="1" time="0">
+<testcase classname="Wex challenge" name="The Higher Price In The First Page Can't Be Greater Than U$2000" time="0">
+<skipped><![CDATA[Given Open Browser on "www.google.com"......................................skipped
+And Search for "Amazon Brasil" and Search...................................skipped
+And Navigate to "www.amazon.com.br" Through The Search Page.................skipped
+And Search For "Iphone" Using The Search Bar................................skipped
+When Find The The More Expensive "Iphone" In Page...........................undefined
+And Convert Its Value To USD Using "https://exchangeratesapi.io/" API.......undefined
+Then Make Sure The Converted Value Is Not Greater Than US"2000".............undefined
 ]]></skipped>
 </testcase>
 </testsuite>
