@@ -5,7 +5,7 @@ Libraries used:
 [![Appium](https://img.shields.io/badge/appium-v.%207.0.0-blueviolet.svg)](http://appium.io/)  [![junit](https://img.shields.io/badge/junit-4.12-red.svg)](https://junit.org/junit4/) [![gherkin](https://img.shields.io/badge/gherkin-2.12.2-brightgreen.svg)](https://cucumber.io/docs/gherkin/) [![restassured](https://img.shields.io/badge/restassured-2.9.0-brightgreen.svg)](https://github.com/rest-assured/rest-assured/wiki/ReleaseNotes29) [![selenium](https://img.shields.io/badge/selenium-3.141.59-blue.svg)](https://www.seleniumhq.org/)
 
 Steps to run this code:
-1- With GitHub installed in your computer clone this repository using git clone https://github.com/karinafarias/WexChallenge.git
+1- With GitHub installed in your computer clone this repository using git clone https://github.com/karinafarias/karinafarias.git
 2- After you cloned this repository, you can just import this projet at Eclipse
 
 Code framework:
