@@ -22,7 +22,7 @@ import enums.Browser;
 				"json:src/test/resources/relatorios/cucumber-reports/cucumber.json",
 				"junit:src/test/resources/relatorios/cucumber-reports/Cucumber.xml"}, 
 		glue = {""},// 
-		tags = "@S2", //
+		tags = "@S3", //
 		snippets = SnippetType.CAMELCASE,
 		monochrome = true, 
 		dryRun = false, 

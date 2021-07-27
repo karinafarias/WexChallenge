@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1097139400,
+              "duration": 1394649300,
               "status": "passed"
             },
             "line": 4,
@@ -29,7 +29,7 @@
           },
           {
             "result": {
-              "duration": 2251900200,
+              "duration": 1548428200,
               "status": "passed"
             },
             "line": 5,
@@ -47,7 +47,7 @@
           },
           {
             "result": {
-              "duration": 1580207800,
+              "duration": 1515649200,
               "status": "passed"
             },
             "line": 6,
@@ -65,7 +65,7 @@
           },
           {
             "result": {
-              "duration": 2336165600,
+              "duration": 1958383400,
               "status": "passed"
             },
             "line": 7,
@@ -84,20 +84,20 @@
         ]
       },
       {
-        "line": 16,
-        "name": "The Higher Price In The First Page Can\u0027t Be Greater Than U$2000",
+        "line": 22,
+        "name": "Products Different Than The Searched Product Should Be Cheaper Than The Searched Product",
         "description": "",
-        "id": "wex-challenge;the-higher-price-in-the-first-page-can\u0027t-be-greater-than-u$2000",
+        "id": "wex-challenge;products-different-than-the-searched-product-should-be-cheaper-than-the-searched-product",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 1708818600,
+              "duration": 2489787900,
               "status": "passed"
             },
-            "line": 17,
-            "name": "Find The The More Expensive \"Iphone\" In Page",
+            "line": 23,
+            "name": "Find Products Which Are Not \"Iphone\"",
             "match": {
               "arguments": [
                 {
@@ -105,51 +105,34 @@
                   "offset": 29
                 }
               ],
-              "location": "SearchInAmazonSteps.findTheTheMoreExpensiveInPage(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 1179600,
-              "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat steps.SearchInAmazonSteps.convertItsValueToUSDUsingAPI(SearchInAmazonSteps.java:56)\r\n\tat ✽.And Convert Its Value To USD Using \"https://exchangeratesapi.io/\" API(SearchInAmazon.feature:18)\r\n",
-              "status": "pending"
-            },
-            "line": 18,
-            "name": "Convert Its Value To USD Using \"https://exchangeratesapi.io/\" API",
-            "match": {
-              "arguments": [
-                {
-                  "val": "https://exchangeratesapi.io/",
-                  "offset": 32
-                }
-              ],
-              "location": "SearchInAmazonSteps.convertItsValueToUSDUsingAPI(String)"
+              "location": "SearchInAmazonSteps.findProductsWhichAreNot(String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 1714400,
+              "error_message": "java.lang.AssertionError: The price of another product is greater than the Iphone\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat paginas.PageAmazon.validateValueFoundProductsAreCheaperThanThe(PageAmazon.java:120)\r\n\tat steps.SearchInAmazonSteps.makeSureAllFoundProductsAreCheaperThanTheCheapest(SearchInAmazonSteps.java:72)\r\n\tat ✽.Then Make Sure All Found Products Are Cheaper Than The Cheapest \"Iphone\"(SearchInAmazon.feature:24)\r\n",
+              "status": "failed"
             },
-            "line": 19,
-            "name": "Make Sure The Converted Value Is Not Greater Than US\"2000\"",
+            "line": 24,
+            "name": "Make Sure All Found Products Are Cheaper Than The Cheapest \"Iphone\"",
             "match": {
               "arguments": [
                 {
-                  "val": "2000",
-                  "offset": 53
+                  "val": "Iphone",
+                  "offset": 60
                 }
               ],
-              "location": "SearchInAmazonSteps.makeSureTheConvertedValueIsNotGreaterThanUS(String)"
+              "location": "SearchInAmazonSteps.makeSureAllFoundProductsAreCheaperThanTheCheapest(String)"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 15,
-            "name": "@S2"
+            "line": 21,
+            "name": "@S3"
           }
         ]
       }

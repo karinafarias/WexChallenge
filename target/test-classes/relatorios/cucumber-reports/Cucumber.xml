@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="1" tests="1" time="8.975411">
-<testcase classname="Wex challenge" name="The Higher Price In The First Page Can't Be Greater Than U$2000" time="8.975411">
-<skipped><![CDATA[Given Open Browser on "www.google.com"......................................passed
+<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="8.908612">
+<testcase classname="Wex challenge" name="Products Different Than The Searched Product Should Be Cheaper Than The Searched Product" time="8.908612">
+<failure message="java.lang.AssertionError: The price of another product is greater than the Iphone&#13;&#10;&#9;at org.junit.Assert.fail(Assert.java:88)&#13;&#10;&#9;at paginas.PageAmazon.validateValueFoundProductsAreCheaperThanThe(PageAmazon.java:120)&#13;&#10;&#9;at steps.SearchInAmazonSteps.makeSureAllFoundProductsAreCheaperThanTheCheapest(SearchInAmazonSteps.java:72)&#13;&#10;&#9;at ✽.Then Make Sure All Found Products Are Cheaper Than The Cheapest &quot;Iphone&quot;(SearchInAmazon.feature:24)&#13;&#10;"><![CDATA[Given Open Browser on "www.google.com"......................................passed
 And Search for "Amazon Brasil" and Search...................................passed
 And Navigate to "www.amazon.com.br" Through The Search Page.................passed
 And Search For "Iphone" Using The Search Bar................................passed
-When Find The The More Expensive "Iphone" In Page...........................passed
-And Convert Its Value To USD Using "https://exchangeratesapi.io/" API.......pending
-Then Make Sure The Converted Value Is Not Greater Than US"2000".............skipped
-]]></skipped>
+And Find Products Which Are Not "Iphone"....................................passed
+Then Make Sure All Found Products Are Cheaper Than The Cheapest "Iphone"....failed
+
+StackTrace:
+java.lang.AssertionError: The price of another product is greater than the Iphone
+	at org.junit.Assert.fail(Assert.java:88)
+	at paginas.PageAmazon.validateValueFoundProductsAreCheaperThanThe(PageAmazon.java:120)
+	at steps.SearchInAmazonSteps.makeSureAllFoundProductsAreCheaperThanTheCheapest(SearchInAmazonSteps.java:72)
+	at ✽.Then Make Sure All Found Products Are Cheaper Than The Cheapest "Iphone"(SearchInAmazon.feature:24)
+]]></failure>
 </testcase>
 </testsuite>

@@ -16,6 +16,11 @@ public class PageAmazon implements InteracaoWeb {
 	private Integer sumTotalOfFoundProducts = 0;
 	private Integer sumTotalOfFoundProductsWithText = 0;
 	private Float maxValue = new Float(0);
+	private Float convertedValue = new Float(0);
+	private Float iphoneCheaper = new Float(0);
+	private Float anotherProductMoreExpensive = new Float(0);
+	
+	
 	Logger logger = LogWeb.getLogger(PageAmazon.class);
 	
 	public void searchForInTheSearchBar(String text) {
@@ -43,7 +48,9 @@ public class PageAmazon implements InteracaoWeb {
 				!t.contains("Pelicula")) {
 			sumTotalOfFoundProductsWithText = sumTotalOfFoundProductsWithText +1;
 			logger.info(sumTotalOfFoundProductsWithText + " "+ t);
-			}
+			this.iphoneCheaper = iphoneCheaper.compareTo(Float.parseFloat(getText(eleAmazon.getTextPriceOfProducts())))<0?iphoneCheaper: Float.parseFloat(getText(eleAmazon.getTextPriceOfProducts()));
+			logger.info(this.iphoneCheaper);
+				}
 		});
 	}
 
@@ -71,14 +78,52 @@ public class PageAmazon implements InteracaoWeb {
 			floatPrices.add(Float.parseFloat(df.format(Float.parseFloat(p))));
 		});
 		
-		floatPrices.forEach(fp->{maxValue = fp.compareTo(maxValue)>0 ? fp: maxValue;});
+		floatPrices.forEach(fp->{this.maxValue = fp.compareTo(this.maxValue)>0 ? fp: maxValue;});
+		logger.info(maxValue);
 		
 	}
 
+	public void convertValueToUSD() {
+		this.convertedValue = (float) (maxValue/100*5.20);
+		logger.info(this.convertedValue);
+	}
+
 	public void validateTheValueIsLessThan(String value) {
-		// TODO Auto-generated method stub
+		if(this.convertedValue.compareTo(Float.parseFloat(value))>0) {
+			Assert.fail("The converted value is not less than U$2000");
+		}
 		
 	}
+
+	public void productsAreNot(String product) {
+		getTexts(eleAmazon.getTextResultSearch()).
+		forEach(t->{
+			if((t.contains(product)||t.contains("iPhone")||t.contains("IPHONE")||t.contains("iphone"))&&
+			t.contains("Capa")||
+			t.contains("CAPA")||
+			t.contains("Carregador")||
+			t.contains("Braçadeira")||
+			t.contains("Protetor")||
+			t.contains("Fone")||
+			t.contains("Xiaomi")||
+			t.contains("Cabo")||
+			t.contains("Pelicula")) {
+				this.anotherProductMoreExpensive = this.anotherProductMoreExpensive.compareTo(Float.parseFloat(getText(eleAmazon.getTextPriceOfProducts())))>0?iphoneCheaper: Float.parseFloat(getText(eleAmazon.getTextPriceOfProducts()));
+				logger.info(this.iphoneCheaper);
+		}
+	});
+		
+	}
+
+	public void validateValueFoundProductsAreCheaperThanThe(String product) {
+		if(this.iphoneCheaper.compareTo(this.anotherProductMoreExpensive)<0) {
+			Assert.fail("The price of another product is greater than the "+product);
+		}
+		
+	}
+	
+	
+
 	
 
 }

@@ -49,7 +49,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.openBrowserOn(String)"
 });
 formatter.result({
-  "duration": 1097139400,
+  "duration": 1394649300,
   "status": "passed"
 });
 formatter.match({
@@ -62,7 +62,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.searchForAndSearch(String)"
 });
 formatter.result({
-  "duration": 2251900200,
+  "duration": 1548428200,
   "status": "passed"
 });
 formatter.match({
@@ -75,7 +75,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.navigateToThroughTheSearchPage(String)"
 });
 formatter.result({
-  "duration": 1580207800,
+  "duration": 1515649200,
   "status": "passed"
 });
 formatter.match({
@@ -88,36 +88,31 @@ formatter.match({
   "location": "SearchInAmazonSteps.searchForUsingTheSearchBar(String)"
 });
 formatter.result({
-  "duration": 2336165600,
+  "duration": 1958383400,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 16,
-  "name": "The Higher Price In The First Page Can\u0027t Be Greater Than U$2000",
+  "line": 22,
+  "name": "Products Different Than The Searched Product Should Be Cheaper Than The Searched Product",
   "description": "",
-  "id": "wex-challenge;the-higher-price-in-the-first-page-can\u0027t-be-greater-than-u$2000",
+  "id": "wex-challenge;products-different-than-the-searched-product-should-be-cheaper-than-the-searched-product",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 15,
-      "name": "@S2"
+      "line": 21,
+      "name": "@S3"
     }
   ]
 });
 formatter.step({
-  "line": 17,
-  "name": "Find The The More Expensive \"Iphone\" In Page",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 18,
-  "name": "Convert Its Value To USD Using \"https://exchangeratesapi.io/\" API",
+  "line": 23,
+  "name": "Find Products Which Are Not \"Iphone\"",
   "keyword": "And "
 });
 formatter.step({
-  "line": 19,
-  "name": "Make Sure The Converted Value Is Not Greater Than US\"2000\"",
+  "line": 24,
+  "name": "Make Sure All Found Products Are Cheaper Than The Cheapest \"Iphone\"",
   "keyword": "Then "
 });
 formatter.match({
@@ -127,36 +122,24 @@ formatter.match({
       "offset": 29
     }
   ],
-  "location": "SearchInAmazonSteps.findTheTheMoreExpensiveInPage(String)"
+  "location": "SearchInAmazonSteps.findProductsWhichAreNot(String)"
 });
 formatter.result({
-  "duration": 1708818600,
+  "duration": 2489787900,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "https://exchangeratesapi.io/",
-      "offset": 32
+      "val": "Iphone",
+      "offset": 60
     }
   ],
-  "location": "SearchInAmazonSteps.convertItsValueToUSDUsingAPI(String)"
+  "location": "SearchInAmazonSteps.makeSureAllFoundProductsAreCheaperThanTheCheapest(String)"
 });
 formatter.result({
-  "duration": 1179600,
-  "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat steps.SearchInAmazonSteps.convertItsValueToUSDUsingAPI(SearchInAmazonSteps.java:56)\r\n\tat ✽.And Convert Its Value To USD Using \"https://exchangeratesapi.io/\" API(SearchInAmazon.feature:18)\r\n",
-  "status": "pending"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "2000",
-      "offset": 53
-    }
-  ],
-  "location": "SearchInAmazonSteps.makeSureTheConvertedValueIsNotGreaterThanUS(String)"
-});
-formatter.result({
-  "status": "skipped"
+  "duration": 1714400,
+  "error_message": "java.lang.AssertionError: The price of another product is greater than the Iphone\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat paginas.PageAmazon.validateValueFoundProductsAreCheaperThanThe(PageAmazon.java:120)\r\n\tat steps.SearchInAmazonSteps.makeSureAllFoundProductsAreCheaperThanTheCheapest(SearchInAmazonSteps.java:72)\r\n\tat ✽.Then Make Sure All Found Products Are Cheaper Than The Cheapest \"Iphone\"(SearchInAmazon.feature:24)\r\n",
+  "status": "failed"
 });
 });
