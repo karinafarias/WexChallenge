@@ -48,7 +48,8 @@ public class PageAmazon implements InteracaoWeb {
 				!t.contains("Pelicula")) {
 			sumTotalOfFoundProductsWithText = sumTotalOfFoundProductsWithText +1;
 			logger.info(sumTotalOfFoundProductsWithText + " "+ t);
-			this.iphoneCheaper = iphoneCheaper.compareTo(Float.parseFloat(getText(eleAmazon.getTextPriceOfProducts())))<0?iphoneCheaper: Float.parseFloat(getText(eleAmazon.getTextPriceOfProducts()));
+			this.iphoneCheaper = Float.parseFloat(getText(eleAmazon.getTextPriceOfProducts()));
+			this.iphoneCheaper = this.iphoneCheaper.compareTo(Float.parseFloat(getText(eleAmazon.getTextPriceOfProducts())))>0?this.iphoneCheaper: Float.parseFloat(getText(eleAmazon.getTextPriceOfProducts()));
 			logger.info(this.iphoneCheaper);
 				}
 		});
@@ -96,6 +97,7 @@ public class PageAmazon implements InteracaoWeb {
 	}
 
 	public void productsAreNot(String product) {
+		SumTotalOfFoundProductsInResultOfSearch(product);
 		getTexts(eleAmazon.getTextResultSearch()).
 		forEach(t->{
 			if((t.contains(product)||t.contains("iPhone")||t.contains("IPHONE")||t.contains("iphone"))&&
@@ -109,7 +111,6 @@ public class PageAmazon implements InteracaoWeb {
 			t.contains("Cabo")||
 			t.contains("Pelicula")) {
 				this.anotherProductMoreExpensive = this.anotherProductMoreExpensive.compareTo(Float.parseFloat(getText(eleAmazon.getTextPriceOfProducts())))>0?iphoneCheaper: Float.parseFloat(getText(eleAmazon.getTextPriceOfProducts()));
-				logger.info(this.iphoneCheaper);
 		}
 	});
 		
@@ -117,7 +118,7 @@ public class PageAmazon implements InteracaoWeb {
 
 	public void validateValueFoundProductsAreCheaperThanThe(String product) {
 		if(this.iphoneCheaper.compareTo(this.anotherProductMoreExpensive)<0) {
-			Assert.fail("The price of another product is greater than the "+product);
+			Assert.fail("The price of another product is greater than the "+product + "\n Value of Iphone "+this.iphoneCheaper+"\n Value of another products "+this.anotherProductMoreExpensive);
 		}
 		
 	}

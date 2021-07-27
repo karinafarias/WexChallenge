@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="8.908612">
-<testcase classname="Wex challenge" name="Products Different Than The Searched Product Should Be Cheaper Than The Searched Product" time="8.908612">
-<failure message="java.lang.AssertionError: The price of another product is greater than the Iphone&#13;&#10;&#9;at org.junit.Assert.fail(Assert.java:88)&#13;&#10;&#9;at paginas.PageAmazon.validateValueFoundProductsAreCheaperThanThe(PageAmazon.java:120)&#13;&#10;&#9;at steps.SearchInAmazonSteps.makeSureAllFoundProductsAreCheaperThanTheCheapest(SearchInAmazonSteps.java:72)&#13;&#10;&#9;at ✽.Then Make Sure All Found Products Are Cheaper Than The Cheapest &quot;Iphone&quot;(SearchInAmazon.feature:24)&#13;&#10;"><![CDATA[Given Open Browser on "www.google.com"......................................passed
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="12.518307">
+<testcase classname="Wex challenge" name="Products Different Than The Searched Product Should Be Cheaper Than The Searched Product" time="12.518307">
+<system-out><![CDATA[Given Open Browser on "www.google.com"......................................passed
 And Search for "Amazon Brasil" and Search...................................passed
 And Navigate to "www.amazon.com.br" Through The Search Page.................passed
 And Search For "Iphone" Using The Search Bar................................passed
 And Find Products Which Are Not "Iphone"....................................passed
-Then Make Sure All Found Products Are Cheaper Than The Cheapest "Iphone"....failed
-
-StackTrace:
-java.lang.AssertionError: The price of another product is greater than the Iphone
-	at org.junit.Assert.fail(Assert.java:88)
-	at paginas.PageAmazon.validateValueFoundProductsAreCheaperThanThe(PageAmazon.java:120)
-	at steps.SearchInAmazonSteps.makeSureAllFoundProductsAreCheaperThanTheCheapest(SearchInAmazonSteps.java:72)
-	at ✽.Then Make Sure All Found Products Are Cheaper Than The Cheapest "Iphone"(SearchInAmazon.feature:24)
-]]></failure>
+Then Make Sure All Found Products Are Cheaper Than The Cheapest "Iphone"....passed
+]]></system-out>
 </testcase>
 </testsuite>

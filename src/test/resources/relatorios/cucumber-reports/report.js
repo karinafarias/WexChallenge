@@ -49,7 +49,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.openBrowserOn(String)"
 });
 formatter.result({
-  "duration": 1394649300,
+  "duration": 1049269800,
   "status": "passed"
 });
 formatter.match({
@@ -62,7 +62,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.searchForAndSearch(String)"
 });
 formatter.result({
-  "duration": 1548428200,
+  "duration": 2480518600,
   "status": "passed"
 });
 formatter.match({
@@ -75,7 +75,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.navigateToThroughTheSearchPage(String)"
 });
 formatter.result({
-  "duration": 1515649200,
+  "duration": 1296355600,
   "status": "passed"
 });
 formatter.match({
@@ -88,7 +88,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.searchForUsingTheSearchBar(String)"
 });
 formatter.result({
-  "duration": 1958383400,
+  "duration": 2671217500,
   "status": "passed"
 });
 formatter.scenario({
@@ -125,7 +125,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.findProductsWhichAreNot(String)"
 });
 formatter.result({
-  "duration": 2489787900,
+  "duration": 5020898000,
   "status": "passed"
 });
 formatter.match({
@@ -138,8 +138,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.makeSureAllFoundProductsAreCheaperThanTheCheapest(String)"
 });
 formatter.result({
-  "duration": 1714400,
-  "error_message": "java.lang.AssertionError: The price of another product is greater than the Iphone\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat paginas.PageAmazon.validateValueFoundProductsAreCheaperThanThe(PageAmazon.java:120)\r\n\tat steps.SearchInAmazonSteps.makeSureAllFoundProductsAreCheaperThanTheCheapest(SearchInAmazonSteps.java:72)\r\n\tat ✽.Then Make Sure All Found Products Are Cheaper Than The Cheapest \"Iphone\"(SearchInAmazon.feature:24)\r\n",
-  "status": "failed"
+  "duration": 47600,
+  "status": "passed"
 });
 });

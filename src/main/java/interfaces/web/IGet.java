@@ -21,7 +21,7 @@ public interface IGet {
 	default String getText(By elemento) {
 		String retorno = null;
 		try {
-			logger.info(String.format("Realizar a ação do método [obterTexto] com elemento [%s].", elemento));
+			logger.info(String.format("Do method[obterTexto] with the element [%s].", elemento));
 			retorno = DriverWeb.getDriver().findElement(elemento).getText();
 			logger.info(String.format("Obteve o texto [%s].", retorno));
 		} catch (NoSuchElementException e) {
@@ -61,7 +61,7 @@ public interface IGet {
 	default String obterTexto(WebElement elemento) {
 		String retorno = null;
 		try {
-			logger.info(String.format("Realizar a ação do método [obterTexto] com elemento [%s].", elemento));
+			logger.info(String.format("Do method[obterTexto] with the element [%s].", elemento));
 			retorno = (elemento).getText();
 			logger.info(String.format("Obteve o texto [%s].", retorno));
 		} catch (NoSuchElementException e) {
@@ -80,9 +80,9 @@ public interface IGet {
 	default String obterValorCss(By elemento, String elementoCss) {
 		String retorno = null;
 		try {
-			logger.info(String.format("Realizar a ação do método [obterValorCss] com elemento [%s] e o valor [%s].", elemento, elementoCss));
+			logger.info(String.format("Do method[obterValorCss] with the element [%s] e o valor [%s].", elemento, elementoCss));
 			retorno = DriverWeb.getDriver().findElement(elemento).getCssValue(elementoCss);
-			logger.info(String.format("Obteve o valor [%s].", retorno));
+			logger.info(String.format("Get text [%s].", retorno));
 		} catch (NoSuchElementException e) {
 			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO encontrado.'");
 			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + elemento + "' em tela.");
@@ -100,9 +100,9 @@ public interface IGet {
 		String retorno = null;
 		try {
 			logger.info(String.format(
-					"Realizar a ação do método [obterValorDeUmAtributoDoElemento] do elemento [%s] e atributo [%s].", elemento, atributoAserObtidoOValor));
+					"Do method[obterValorDeUmAtributoDoElemento] do elemento [%s] e atributo [%s].", elemento, atributoAserObtidoOValor));
 			retorno = DriverWeb.getDriver().findElement(elemento).getAttribute(atributoAserObtidoOValor);
-			logger.info(String.format("Obteve o valor [%s].", retorno));
+			logger.info(String.format("Get text [%s].", retorno));
 		} catch (NoSuchElementException e) {
 			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO encontrado.'");
 			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + elemento + "' em tela.");
@@ -120,9 +120,9 @@ public interface IGet {
 		String retorno = null;
 		try {
 			logger.info(String.format(
-					"Realizar a ação do método [obterValorDeUmAtributoDoElemento] do elemento [%s] e atributo [%s].", elemento, atributoAserObtidoOValor));
+					"Do method[obterValorDeUmAtributoDoElemento] do elemento [%s] e atributo [%s].", elemento, atributoAserObtidoOValor));
 			retorno = elemento.getAttribute(atributoAserObtidoOValor);
-			logger.info(String.format("Obteve o valor [%s].", retorno));
+			logger.info(String.format("Get text [%s].", retorno));
 		} catch (NoSuchElementException e) {
 			logger.error(" -- ERRO: elemento: '" + elemento + "' NAO encontrado.'");
 			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o elemento: '" + elemento + "' em tela.");
@@ -137,14 +137,14 @@ public interface IGet {
 	}
 	
 	default String obterAtributoPorLabel(String label, String atributo) {
-		logger.info(String.format("Realizar a ação do método [obterTextoPorLabel] com elemento [%s] e atributo [%s].",
+		logger.info(String.format("Do method[obterTextoPorLabel] with the element [%s] e atributo [%s].",
 				label, atributo));
 		String retorno = null;
 		try {
 			String xpath = "//b[text()='%s']/../following-sibling::input[@type='hidden']";
 			By elemento = By.xpath(String.format(xpath, label));
 			retorno = DriverWeb.getDriver().findElement(elemento).getAttribute(atributo);
-			logger.info(String.format("Obteve o valor [%s].", retorno));
+			logger.info(String.format("Get text [%s].", retorno));
 			return retorno;
 		}catch (NoSuchElementException e) {
 			logger.error(" -- ERRO: label: '" + label + "' NAO encontrado.'");
@@ -161,9 +161,9 @@ public interface IGet {
 
 	default String obterTextoHidden(By elemento) {
 		try {
-			logger.info(String.format("Realizar a ação do método [obterTexto] com elemento [%s].", elemento));
+			logger.info(String.format("Do method[obterTexto] with the element [%s].", elemento));
 			String retorno = DriverWeb.getDriver().findElement(elemento).getAttribute("innerText");
-			logger.info(String.format("Obteve o valor [%s].", retorno));
+			logger.info(String.format("Get text [%s].", retorno));
 			return retorno;
 
 		} catch (NoSuchElementException e) {

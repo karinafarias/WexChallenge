@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<features version="1"><feature name="Wex challenge" path="src\test\resources\features\SearchInAmazon.feature" started="1627369274113" tag=""><file><![CDATA[@WexChallenge
+<features version="1"><feature name="Wex challenge" path="src\test\resources\features\SearchInAmazon.feature" started="1627386686874" tag=""><file><![CDATA[@WexChallenge
 Feature: Wex challenge
 Background:
 Given Open Browser on "www.google.com"
@@ -22,9 +22,4 @@ Then Make Sure The Converted Value Is Not Greater Than US"2000"
 @S3
 Scenario: Products Different Than The Searched Product Should Be Cheaper Than The Searched Product
 And Find Products Which Are Not "Iphone"
-Then Make Sure All Found Products Are Cheaper Than The Cheapest "Iphone"]]></file><scenarios><background><steps><step duration="1394649300" name="Given Open Browser on &quot;www.google.com&quot;" status="passed"/><step duration="1548428200" name="And Search for &quot;Amazon Brasil&quot; and Search" status="passed"/><step duration="1515649200" name="And Navigate to &quot;www.amazon.com.br&quot; Through The Search Page" status="passed"/><step duration="1958383400" name="And Search For &quot;Iphone&quot; Using The Search Bar" status="passed"/></steps></background><scenario name="Products Different Than The Searched Product Should Be Cheaper Than The Searched Product"><steps><step duration="2489787900" name="And Find Products Which Are Not &quot;Iphone&quot;" status="passed"/><step duration="1714400" name="Then Make Sure All Found Products Are Cheaper Than The Cheapest &quot;Iphone&quot;" status="failed"><error_message><![CDATA[java.lang.AssertionError: The price of another product is greater than the Iphone
-	at org.junit.Assert.fail(Assert.java:88)
-	at paginas.PageAmazon.validateValueFoundProductsAreCheaperThanThe(PageAmazon.java:120)
-	at steps.SearchInAmazonSteps.makeSureAllFoundProductsAreCheaperThanTheCheapest(SearchInAmazonSteps.java:72)
-	at ✽.Then Make Sure All Found Products Are Cheaper Than The Cheapest "Iphone"(SearchInAmazon.feature:24)
-]]></error_message></step></steps></scenario></scenarios></feature></features>
+Then Make Sure All Found Products Are Cheaper Than The Cheapest "Iphone"]]></file><scenarios><background><steps><step duration="1049269800" name="Given Open Browser on &quot;www.google.com&quot;" status="passed"/><step duration="2480518600" name="And Search for &quot;Amazon Brasil&quot; and Search" status="passed"/><step duration="1296355600" name="And Navigate to &quot;www.amazon.com.br&quot; Through The Search Page" status="passed"/><step duration="2671217500" name="And Search For &quot;Iphone&quot; Using The Search Bar" status="passed"/></steps></background><scenario name="Products Different Than The Searched Product Should Be Cheaper Than The Searched Product"><steps><step duration="5020898000" name="And Find Products Which Are Not &quot;Iphone&quot;" status="passed"/><step duration="47600" name="Then Make Sure All Found Products Are Cheaper Than The Cheapest &quot;Iphone&quot;" status="passed"/></steps></scenario></scenarios></feature></features>
