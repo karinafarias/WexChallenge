@@ -49,7 +49,8 @@ formatter.match({
   "location": "SearchInAmazonSteps.openBrowserOn(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 1097139400,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -61,7 +62,8 @@ formatter.match({
   "location": "SearchInAmazonSteps.searchForAndSearch(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 2251900200,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -73,7 +75,8 @@ formatter.match({
   "location": "SearchInAmazonSteps.navigateToThroughTheSearchPage(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 1580207800,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -85,7 +88,8 @@ formatter.match({
   "location": "SearchInAmazonSteps.searchForUsingTheSearchBar(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 2336165600,
+  "status": "passed"
 });
 formatter.scenario({
   "line": 16,
@@ -116,16 +120,43 @@ formatter.step({
   "name": "Make Sure The Converted Value Is Not Greater Than US\"2000\"",
   "keyword": "Then "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.match({
+  "arguments": [
+    {
+      "val": "Iphone",
+      "offset": 29
+    }
+  ],
+  "location": "SearchInAmazonSteps.findTheTheMoreExpensiveInPage(String)"
 });
-formatter.match({});
 formatter.result({
-  "status": "undefined"
+  "duration": 1708818600,
+  "status": "passed"
 });
-formatter.match({});
+formatter.match({
+  "arguments": [
+    {
+      "val": "https://exchangeratesapi.io/",
+      "offset": 32
+    }
+  ],
+  "location": "SearchInAmazonSteps.convertItsValueToUSDUsingAPI(String)"
+});
 formatter.result({
-  "status": "undefined"
+  "duration": 1179600,
+  "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat steps.SearchInAmazonSteps.convertItsValueToUSDUsingAPI(SearchInAmazonSteps.java:56)\r\n\tat ✽.And Convert Its Value To USD Using \"https://exchangeratesapi.io/\" API(SearchInAmazon.feature:18)\r\n",
+  "status": "pending"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "2000",
+      "offset": 53
+    }
+  ],
+  "location": "SearchInAmazonSteps.makeSureTheConvertedValueIsNotGreaterThanUS(String)"
+});
+formatter.result({
+  "status": "skipped"
 });
 });

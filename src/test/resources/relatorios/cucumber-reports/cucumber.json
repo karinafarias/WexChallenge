@@ -11,7 +11,8 @@
         "steps": [
           {
             "result": {
-              "status": "skipped"
+              "duration": 1097139400,
+              "status": "passed"
             },
             "line": 4,
             "name": "Open Browser on \"www.google.com\"",
@@ -28,7 +29,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 2251900200,
+              "status": "passed"
             },
             "line": 5,
             "name": "Search for \"Amazon Brasil\" and Search",
@@ -45,7 +47,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 1580207800,
+              "status": "passed"
             },
             "line": 6,
             "name": "Navigate to \"www.amazon.com.br\" Through The Search Page",
@@ -62,7 +65,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 2336165600,
+              "status": "passed"
             },
             "line": 7,
             "name": "Search For \"Iphone\" Using The Search Bar",
@@ -89,29 +93,56 @@
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 1708818600,
+              "status": "passed"
             },
             "line": 17,
             "name": "Find The The More Expensive \"Iphone\" In Page",
-            "match": {},
+            "match": {
+              "arguments": [
+                {
+                  "val": "Iphone",
+                  "offset": 29
+                }
+              ],
+              "location": "SearchInAmazonSteps.findTheTheMoreExpensiveInPage(String)"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 1179600,
+              "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat steps.SearchInAmazonSteps.convertItsValueToUSDUsingAPI(SearchInAmazonSteps.java:56)\r\n\tat ✽.And Convert Its Value To USD Using \"https://exchangeratesapi.io/\" API(SearchInAmazon.feature:18)\r\n",
+              "status": "pending"
             },
             "line": 18,
             "name": "Convert Its Value To USD Using \"https://exchangeratesapi.io/\" API",
-            "match": {},
+            "match": {
+              "arguments": [
+                {
+                  "val": "https://exchangeratesapi.io/",
+                  "offset": 32
+                }
+              ],
+              "location": "SearchInAmazonSteps.convertItsValueToUSDUsingAPI(String)"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "undefined"
+              "status": "skipped"
             },
             "line": 19,
             "name": "Make Sure The Converted Value Is Not Greater Than US\"2000\"",
-            "match": {},
+            "match": {
+              "arguments": [
+                {
+                  "val": "2000",
+                  "offset": 53
+                }
+              ],
+              "location": "SearchInAmazonSteps.makeSureTheConvertedValueIsNotGreaterThanUS(String)"
+            },
             "keyword": "Then "
           }
         ],

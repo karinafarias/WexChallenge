@@ -46,20 +46,19 @@ public void makeSureAtLeastOfItemsFoundAre(String percent, String item) {
     pageAmazon.validateAtLeastOfItensFoundsAre(percent,item);
 }
 @When("^Find The The More Expensive \"([^\"]*)\" In Page$")
-public void findTheTheMoreExpensiveInPage(String arg1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
+public void findTheTheMoreExpensiveInPage(String product) {
+    pageAmazon.moreExpensiveInPage(product);
 }
 
 @When("^Convert Its Value To USD Using \"([^\"]*)\" API$")
-public void convertItsValueToUSDUsingAPI(String arg1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
+public void convertItsValueToUSDUsingAPI(String api) {
+	// Write code here that turns the phrase above into concrete actions
+	throw new PendingException();
+   
 }
 
 @Then("^Make Sure The Converted Value Is Not Greater Than US\"([^\"]*)\"$")
-public void makeSureTheConvertedValueIsNotGreaterThanUS(String arg1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
+public void makeSureTheConvertedValueIsNotGreaterThanUS(String value) {
+    pageAmazon.validateTheValueIsLessThan(value);
 }
 }

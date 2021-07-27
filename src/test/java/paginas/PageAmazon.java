@@ -1,5 +1,9 @@
 package paginas;
 
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 
@@ -11,6 +15,7 @@ public class PageAmazon implements InteracaoWeb {
 	private ElementsAmazon eleAmazon = new ElementsAmazon();
 	private Integer sumTotalOfFoundProducts = 0;
 	private Integer sumTotalOfFoundProductsWithText = 0;
+	private Float maxValue = new Float(0);
 	Logger logger = LogWeb.getLogger(PageAmazon.class);
 	
 	public void searchForInTheSearchBar(String text) {
@@ -48,6 +53,30 @@ public class PageAmazon implements InteracaoWeb {
 		if((sumTotalOfFoundProducts* Integer.parseInt(percent)/100) >= sumTotalOfFoundProductsWithText) {
 			Assert.fail("Sum of the itens founds are less than 80%");
 		}
+		
+	}
+
+	public void moreExpensiveInPage(String product) {
+		List<String>textWholePrices = getTexts(eleAmazon.getTextWholePrice());
+		List<String>textFractionPrices = getTexts(eleAmazon.getTextFractionPrice());
+		List<String>textPrices = new ArrayList<>();
+		List<Float>floatPrices = new ArrayList<>();
+		
+		for (int i=0; i< textWholePrices.size(); i++) {
+			textPrices.add(textWholePrices.get(i).concat(textFractionPrices.get(i)));
+		}
+		textPrices.forEach(p->{
+			DecimalFormat df = new DecimalFormat("0.00");
+			df.setMaximumFractionDigits(2);
+			floatPrices.add(Float.parseFloat(df.format(Float.parseFloat(p))));
+		});
+		
+		floatPrices.forEach(fp->{maxValue = fp.compareTo(maxValue)>0 ? fp: maxValue;});
+		
+	}
+
+	public void validateTheValueIsLessThan(String value) {
+		// TODO Auto-generated method stub
 		
 	}
 	
