@@ -3,8 +3,8 @@ package steps;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import paginas.PageAmazon;
-import paginas.PageGoogle;
+import pages.PageAmazon;
+import pages.PageGoogle;
 
 public class SearchInAmazonSteps {
 	PageGoogle pageGoogle = new PageGoogle();

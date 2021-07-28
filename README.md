@@ -7,6 +7,10 @@ Libraries used:
 Steps to run this code:
 1- With GitHub installed in your computer clone this repository using git clone https://github.com/karinafarias/karinafarias.git
 2- After you cloned this repository, you can just import this projet at Eclipse
+3- Open src/test/java/execute/CucumberExecuteTest.java 
+4- Click with right button of the mouse
+5- Go to Run as..
+6- Select JUnit Test
 
 Code framework:
 -src/main/java - in this path we have the BRQ framework
@@ -16,10 +20,10 @@ Code framework:
   |-- test
        |-- java 
             |--APIConnection
-            |--elementos
-            |--executar
+            |--elements
+            |--execute
                   |--CucumberExecuteTest.java - in this class you can change the tags and execute especific scenaries. Just run with JUnit
-            |--paginas
+            |--pages
             |--steps
             |--utils
             

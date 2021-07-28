@@ -13,7 +13,7 @@ import com.google.gson.JsonParser;
 
 import interfaces.log.LogWeb;
 import okhttp3.Request;
-import paginas.PageAmazon;
+import pages.PageAmazon;
 import utils.RegrasUtils;
 
 public class APIExchangeConnection {

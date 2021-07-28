@@ -15,14 +15,14 @@ public class DriverWeb {
 
 	public static WebDriver getDriver(Browser navegadorDeExecucao, boolean executarSemInterfaceGrafica) {
 		if (driver == null) {
-			DriverPath.informarPathDoDriver(navegadorDeExecucao.toString(), driver, executarSemInterfaceGrafica);
-			driver = DriverPath.driverInicializado(navegadorDeExecucao.toString());
+			DriverPath.pathOfDriver(navegadorDeExecucao.toString(), driver, executarSemInterfaceGrafica);
+			driver = DriverPath.startedDriver(navegadorDeExecucao.toString());
 		}
 		return driver;
 	}
 
 
-	public static void finalizarDriver() {
+	public static void finishDriver() {
 		if (driver != null) {
 			driver.quit();
 			driver = null;

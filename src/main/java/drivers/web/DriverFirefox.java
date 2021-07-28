@@ -14,7 +14,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 /***
- * Classe responsavel por criar a instância do gecko driver
+ * Class responsable to make a instanties of firefox driver
  * @author leonardoananias
  *
  */
@@ -30,7 +30,7 @@ public class DriverFirefox {
 		FirefoxOptions firefoxOptions = setupBrowser(headless);
 
 		driver = new FirefoxDriver(firefoxOptions);
-		logger.info("Firefox iniciado com sucesso.");
+		logger.info("Firefox started with.");
 	}
 	
 	private FirefoxOptions setupBrowser(Boolean headless) {
@@ -51,14 +51,13 @@ public class DriverFirefox {
 		profile.setPreference("services.sync.prefs.sync.browser.download.manager.showWhenStarting", false);
 		profile.setPreference("pdfjs.disabled", true);
 
-		// Configuracoes das opcoes do perfil para inserir no navegador
 		FirefoxOptions firefoxOptions = new FirefoxOptions();
 		firefoxOptions.setProfile(profile);
 		firefoxOptions.setHeadless(headless);
 		return firefoxOptions;
 	}
 
-	public static void finalizarProcessoFirefox() {
+	public static void finishProcessInFirefox() {
 		try {
 			Process process = Runtime.getRuntime().exec("taskkill /f /im geckodriver.exe");
 			@SuppressWarnings("resource")

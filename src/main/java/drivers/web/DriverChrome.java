@@ -16,7 +16,7 @@ import interfaces.log.LogWeb;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
- * Classe responsavel por criar a instância do chrome driver
+ * Class responsable to make a instanties of chrome driver
  * @author leonardoananias
  *
  */
@@ -34,7 +34,7 @@ public class DriverChrome {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		logger.info("Chrome iniciado com sucesso.");
+		logger.info("Chrome started with success.");
 	}
 	
 	private ChromeOptions setupChromeBrowser(Boolean headless) {
@@ -46,7 +46,6 @@ public class DriverChrome {
         chromePrefs.put("safebrowsing.enabled", "true"); 
         chromePrefs.put("profile.default_content_setting_values.notifications", 2);
 		
-		// Configurando Opcoes de Navegador
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("prefs", chromePrefs);
 		options.setExperimentalOption("useAutomationExtension", false);
@@ -69,7 +68,7 @@ public class DriverChrome {
 
 	}
 	
-	public static void finalizarProcessoChromeLinux() {
+	public static void finishProcessInChromeLinux() {
 		try {
 			Process process = Runtime.getRuntime().exec("pkill chrome");
 			@SuppressWarnings("resource")

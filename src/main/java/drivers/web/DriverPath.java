@@ -9,35 +9,35 @@ public final class DriverPath {
 	private static final String chrome = "CHROME";
 	private static final String firefox = "FIREFOX";
 	private static final String explorer = "EXPLORER";
-	private static final String mensagem = "Navegador não encontrado.";
+	private static final String message = "Browser not found";
 	static DriverChrome driverChrome;
 	static DriverFirefox driverFirefox;
 	static DriverInternetExplorer driverInternet;
 	
 	private DriverPath() {}
 	
-	public static void informarPathDoDriver(String navegador,  WebDriver driver, Boolean headless){
-		switch (sistemaOperacional()) {
+	public static void pathOfDriver(String browser,  WebDriver driver, Boolean headless){
+		switch (operatingSystem()) {
 		case "Windows":
-			pathWindows(navegador, driver , headless);
+			pathWindows(browser, driver , headless);
 			break;
 		
 		case "Mac":
-			pathMac(navegador, driver , headless);
+			pathMac(browser, driver , headless);
 			break;
 		
 		case "Linux":
-			pathLinux(navegador, driver , headless);
+			pathLinux(browser, driver , headless);
 			break;
 			
 		default:
-			System.err.println(mensagem);
+			System.err.println(message);
 			break;
 		}
 	}
 	
-	public static WebDriver driverInicializado(String navegador) {
-		switch (navegador) {
+	public static WebDriver startedDriver(String browser) {
+		switch (browser) {
 		case chrome:
 			return driverChrome.getDriver();
 		case firefox:
@@ -45,14 +45,14 @@ public final class DriverPath {
 		case explorer:
 			return driverInternet.getDriver();
 		default:
-			System.err.println(mensagem);
+			System.err.println(message);
 			break;
 		}
 		return null;
 	}
 	
-	private static void pathWindows(String navegador, WebDriver driver, Boolean headless) {
-		switch (navegador) {
+	private static void pathWindows(String browser, WebDriver driver, Boolean headless) {
+		switch (browser) {
 		case chrome:
 			driverChrome = new DriverChrome(headless);
 			break;
@@ -63,13 +63,13 @@ public final class DriverPath {
 			driverInternet = new DriverInternetExplorer(driver);
 			break;
 		default:
-			System.err.println(mensagem);
+			System.err.println(message);
 			break;
 		}
 	} 
 	
-	private static void pathMac(String navegador, WebDriver driver, Boolean headless) {
-		switch (navegador) {
+	private static void pathMac(String browser, WebDriver driver, Boolean headless) {
+		switch (browser) {
 		case chrome:
 			driverChrome = new DriverChrome(headless);
 			break;
@@ -80,13 +80,13 @@ public final class DriverPath {
 			driverInternet = new DriverInternetExplorer(driver);
 			break;
 		default:
-			System.err.println(mensagem);
+			System.err.println(message);
 			break;
 		}
 	} 
 	
-	private static void pathLinux(String navegador, WebDriver driver, Boolean headless) {
-		switch (navegador) {
+	private static void pathLinux(String browser, WebDriver driver, Boolean headless) {
+		switch (browser) {
 		case chrome:
 			driverChrome = new DriverChrome(headless);
 			break;
@@ -97,12 +97,12 @@ public final class DriverPath {
 			driverInternet = new DriverInternetExplorer(driver);
 			break;
 		default:
-			System.out.println(mensagem);
+			System.out.println(message);
 			break;
 		}
 	} 
 	
-	private static String sistemaOperacional() {
+	private static String operatingSystem() {
 		if (sistema.contains("windows")) {
 			return "Windows";	
 		}else if(sistema.contains("mac")) {

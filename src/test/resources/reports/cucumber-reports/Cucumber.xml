@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="2" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="3" time="18.663439">
+<testcase classname="Wex challenge" name="80% Of Shown Products Should Be Exclusively The Searched Product" time="9.757602">
+<failure message="java.lang.AssertionError: Sum of the itens found are less than 80%&#13;&#10;&#9;at org.junit.Assert.fail(Assert.java:88)&#13;&#10;&#9;at pages.PageAmazon.validateAtLeastOfItensFoundsAre(PageAmazon.java:62)&#13;&#10;&#9;at steps.SearchInAmazonSteps.makeSureAtLeastOfItemsFoundAre(SearchInAmazonSteps.java:45)&#13;&#10;&#9;at ✽.Then Make Sure At Least &quot;80&quot;% Of Items Found are &quot;Iphone&quot;(SearchInAmazon.feature:13)&#13;&#10;"><![CDATA[Given Open Browser on "www.google.com"......................................passed
+And Search for "Amazon Brasil" and Search...................................passed
+And Navigate to "www.amazon.com.br" Through The Search Page.................passed
+And Search For "Iphone" Using The Search Bar................................passed
+And Count The Total List Of Found Products..................................passed
+And Count The Total Of "Iphone" Items Found.................................passed
+Then Make Sure At Least "80"% Of Items Found are "Iphone"...................failed
+
+StackTrace:
+java.lang.AssertionError: Sum of the itens found are less than 80%
+	at org.junit.Assert.fail(Assert.java:88)
+	at pages.PageAmazon.validateAtLeastOfItensFoundsAre(PageAmazon.java:62)
+	at steps.SearchInAmazonSteps.makeSureAtLeastOfItemsFoundAre(SearchInAmazonSteps.java:45)
+	at ✽.Then Make Sure At Least "80"% Of Items Found are "Iphone"(SearchInAmazon.feature:13)
+]]></failure>
+</testcase>
+<testcase classname="Wex challenge" name="The Higher Price In The First Page Can't Be Greater Than U$2000" time="4.028992">
+<failure message="java.lang.AssertionError: The converted value greater than U$2000&#13;&#10;&#9;at org.junit.Assert.fail(Assert.java:88)&#13;&#10;&#9;at pages.PageAmazon.validateTheValueIsLessThan(PageAmazon.java:94)&#13;&#10;&#9;at steps.SearchInAmazonSteps.makeSureTheConvertedValueIsNotGreaterThanUS(SearchInAmazonSteps.java:61)&#13;&#10;&#9;at ✽.Then Make Sure The Converted Value Is Not Greater Than US&quot;2000&quot;(SearchInAmazon.feature:19)&#13;&#10;"><![CDATA[Given Open Browser on "www.google.com"......................................passed
+And Search for "Amazon Brasil" and Search...................................passed
+And Navigate to "www.amazon.com.br" Through The Search Page.................passed
+And Search For "Iphone" Using The Search Bar................................passed
+When Find The The More Expensive "Iphone" In Page...........................passed
+And Convert Its Value To USD Using "https://exchangeratesapi.io/" API.......passed
+Then Make Sure The Converted Value Is Not Greater Than US"2000".............failed
+
+StackTrace:
+java.lang.AssertionError: The converted value greater than U$2000
+	at org.junit.Assert.fail(Assert.java:88)
+	at pages.PageAmazon.validateTheValueIsLessThan(PageAmazon.java:94)
+	at steps.SearchInAmazonSteps.makeSureTheConvertedValueIsNotGreaterThanUS(SearchInAmazonSteps.java:61)
+	at ✽.Then Make Sure The Converted Value Is Not Greater Than US"2000"(SearchInAmazon.feature:19)
+]]></failure>
+</testcase>
+<testcase classname="Wex challenge" name="Products Different Than The Searched Product Should Be Cheaper Than The Searched Product" time="4.876845">
+<system-out><![CDATA[Given Open Browser on "www.google.com"......................................passed
+And Search for "Amazon Brasil" and Search...................................passed
+And Navigate to "www.amazon.com.br" Through The Search Page.................passed
+And Search For "Iphone" Using The Search Bar................................passed
+And Find Products Which Are Not "Iphone"....................................passed
+Then Make Sure All Found Products Are Cheaper Than The Cheapest "Iphone"....passed
+]]></system-out>
+</testcase>
+</testsuite>

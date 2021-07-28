@@ -10,7 +10,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 /**
- * Classe responsavel por criar a instância do Internet explorer
+* Class responsable to make a instanties of internet explorer driver
  * @author leonardoananias
  *
  */
@@ -22,7 +22,7 @@ public class DriverInternetExplorer {
 		WebDriverManager.iedriver().setup();
 		InternetExplorerOptions capability = setupBrowser();
 		driver = new InternetExplorerDriver(capability);
-		logger.info("Internet Explorer iniciado com sucesso.");
+		logger.info("Internet Explorer started with success.");
 	}
 	
 	private static InternetExplorerOptions setupBrowser() {

@@ -14,79 +14,79 @@ import org.openqa.selenium.WebElement;
 import drivers.web.DriverWeb;
 import interfaces.log.LogWeb;
 
-public interface IWrite extends IClick, IWriteJS {
+public interface IWrite extends IClick {
 	static Logger logger = LogWeb.getLogger(IWrite.class);
 
-	default void write(By elemento, String texto) {
+	default void write(By element, String text) {
 		try {
-			logger.info(String.format("Do a method [write] with element [%s] and text [%s].", elemento,
-					texto));
-			DriverWeb.getDriver().findElement(elemento).clear();
-			DriverWeb.getDriver().findElement(elemento).sendKeys(Keys.END + Keys.chord(Keys.SHIFT, Keys.HOME));
-			DriverWeb.getDriver().findElement(elemento).sendKeys(texto);
+			logger.info(String.format("Do a method [write] with element [%s] and text [%s].", element,
+					text));
+			DriverWeb.getDriver().findElement(element).clear();
+			DriverWeb.getDriver().findElement(element).sendKeys(Keys.END + Keys.chord(Keys.SHIFT, Keys.HOME));
+			DriverWeb.getDriver().findElement(element).sendKeys(text);
 		} catch (NoSuchElementException|TimeoutException|InvalidElementStateException e) {
 			logger.error(e.getMessage());
-			Assert.fail(LocalDateTime.now() + " " + e.getMessage()+" "+elemento);
+			Assert.fail(LocalDateTime.now() + " " + e.getMessage()+" "+element);
 		} 
 	}
 
-	default void superWrite(By elemento, String texto) {
+	default void superWrite(By element, String text) {
 		try {
 			logger.info(String.format("Do a method [superEscrever] with element [%s] and text [%s].",
-					elemento, texto));
-			WebElement webElement = DriverWeb.getDriver().findElement(elemento);
-			superClick(elemento);
+					element, text));
+			WebElement webElement = DriverWeb.getDriver().findElement(element);
+			superClick(element);
 			webElement.clear();
-			webElement.sendKeys(texto);
+			webElement.sendKeys(text);
 		} catch (NoSuchElementException|TimeoutException|InvalidElementStateException e) {
 			logger.error(e.getMessage());
-			Assert.fail(LocalDateTime.now() + " " + e.getMessage()+" "+elemento);
+			Assert.fail(LocalDateTime.now() + " " + e.getMessage()+" "+element);
 		} 
 	}
 
-	default void writeACharOneByOne(By elemento, String texto) {
+	default void writeACharOneByOne(By element, String text) {
 		try {
 			logger.info(
 					String.format("Do a method [writeACharOneByOne] with element [%s] and text [%s].",
-							elemento, texto));
-			DriverWeb.getDriver().findElement(elemento).clear();
-			for (int i = 0; i < texto.length(); i++) {
-				char c = texto.charAt(i);
+							element, text));
+			DriverWeb.getDriver().findElement(element).clear();
+			for (int i = 0; i < text.length(); i++) {
+				char c = text.charAt(i);
 				String s = new StringBuilder().append(c).toString();
-				DriverWeb.getDriver().findElement(elemento).sendKeys(s);
+				DriverWeb.getDriver().findElement(element).sendKeys(s);
 			}
 		} catch (NoSuchElementException|TimeoutException|InvalidElementStateException e) {
 			logger.error(e.getMessage());
-			Assert.fail(LocalDateTime.now() + " " + e.getMessage()+" "+elemento);
+			Assert.fail(LocalDateTime.now() + " " + e.getMessage()+" "+element);
 		} 
 	}
 
-	default void writeACharOneByOne(WebElement elemento, String texto) {
+	default void writeACharOneByOne(WebElement element, String text) {
 		try {
 			logger.info(
 					String.format("Do a method [writeACharOneByOne] with element [%s] and text [%s].",
-							elemento, texto));
-			elemento.clear();
-			for (int i = 0; i < texto.length(); i++) {
-				char c = texto.charAt(i);
+							element, text));
+			element.clear();
+			for (int i = 0; i < text.length(); i++) {
+				char c = text.charAt(i);
 				String s = new StringBuilder().append(c).toString();
-				(elemento).sendKeys(s);
+				(element).sendKeys(s);
 			}
 		} catch (NoSuchElementException|TimeoutException|InvalidElementStateException e) {
 			logger.error(e.getMessage());
-			Assert.fail(LocalDateTime.now() + " " + e.getMessage()+" "+elemento);
+			Assert.fail(LocalDateTime.now() + " " + e.getMessage()+" "+element);
 		} 
 	}
 	
-	default void write(WebElement elemento, String texto) {
+	default void write(WebElement element, String text) {
 		try {
-			logger.info(String.format("Do a method [write] with element [%s] and text [%s].", elemento,
-					texto));
-			(elemento).sendKeys(Keys.END + Keys.chord(Keys.SHIFT, Keys.HOME));
-			(elemento).sendKeys(texto);
+			logger.info(String.format("Do a method [write] with element [%s] and text [%s].", element,
+					text));
+			(element).sendKeys(Keys.END + Keys.chord(Keys.SHIFT, Keys.HOME));
+			(element).sendKeys(text);
 		} catch (NoSuchElementException|TimeoutException|InvalidElementStateException e) {
 			logger.error(e.getMessage());
-			Assert.fail(LocalDateTime.now() + " " + e.getMessage()+" "+elemento);
+			Assert.fail(LocalDateTime.now() + " " + e.getMessage()+" "+element);
 		} 
 	}
 }
