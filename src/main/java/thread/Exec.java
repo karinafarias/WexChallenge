@@ -2,9 +2,7 @@ package thread;
 
 import org.junit.Test;
 
-import interfaces.web.IUtils;
-
-public abstract class Exec implements IUtils {
+public abstract class Exec {
 
 	@Test
 	public abstract void executar();

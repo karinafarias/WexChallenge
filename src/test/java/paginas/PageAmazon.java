@@ -8,10 +8,10 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 
 import elementos.ElementsAmazon;
-import interacoes.InteracaoWeb;
+import interation.InteractionWeb;
 import interfaces.log.LogWeb;
 
-public class PageAmazon implements InteracaoWeb {
+public class PageAmazon implements InteractionWeb {
 	private ElementsAmazon eleAmazon = new ElementsAmazon();
 	private Integer sumTotalOfFoundProducts = 0;
 	private Integer sumTotalOfFoundProductsWithText = 0;
@@ -29,7 +29,7 @@ public class PageAmazon implements InteracaoWeb {
 	}
 
 	public void SumTotalOfFoundProductsInResultOfSearch() {
-		sumTotalOfFoundProducts = getTexts(eleAmazon.getTextResultSearch()).size();
+		this.sumTotalOfFoundProducts = getTexts(eleAmazon.getTextResultSearch()).size();
 		logger.info(sumTotalOfFoundProducts);
 	}
 

@@ -9,10 +9,11 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
-import interacoes.InteracaoWeb;
+
+import interation.InteractionWeb;
 import interfaces.log.LogWeb;
 
-public class RegrasUtils implements InteracaoWeb{
+public class RegrasUtils implements InteractionWeb{
 
 	/**
 	 * *********************************************************************************************************************************

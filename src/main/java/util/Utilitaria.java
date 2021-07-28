@@ -14,8 +14,6 @@ import com.itextpdf.text.pdf.parser.PdfReaderContentParser;
 import com.itextpdf.text.pdf.parser.SimpleTextExtractionStrategy;
 import com.itextpdf.text.pdf.parser.TextExtractionStrategy;
 
-import geradordeevidenciaword.DocumentoDeEvidencia;
-
 public class Utilitaria {
 
 	public static String obterHoraMinutoSegundo() {
@@ -45,11 +43,7 @@ public class Utilitaria {
 		return texto;
 	}
 
-	public void gerarEvidenciaWord(boolean gerar, String identificadorConfiguracaoCucumberPlanilha) {
-		DocumentoDeEvidencia documentoDeEvidencia = new DocumentoDeEvidencia();
-		if (gerar)
-			documentoDeEvidencia.gerarEvidencias(identificadorConfiguracaoCucumberPlanilha);
-	}
+
 
 	public String getProjectProperty(String string) {
 		Properties properties = new Properties();

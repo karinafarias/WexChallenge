@@ -5,8 +5,6 @@ import java.util.List;
 
 import drivers.web.DriverWeb;
 import enums.Browser;
-import enums.TipoRetorno;
-import planilha.Planilha;
 
 public class ConfigurarThread {
 
@@ -17,17 +15,6 @@ public class ConfigurarThread {
 	private String caminhoDasFeatures = null;
 	private String pacoteSteps = null;
 
-	protected ConfigurarThread(String identificadorConfiguracaoCucumberPlanilhaDeTestes) {
-		Planilha planilha = new Planilha();
-		pacoteSteps = planilha.retornarElementoDaPlanilha(identificadorConfiguracaoCucumberPlanilhaDeTestes,
-				TipoRetorno.PACOTESTEPS);
-		caminhoDasFeatures = planilha.retornarElementoDaPlanilha(identificadorConfiguracaoCucumberPlanilhaDeTestes,
-				TipoRetorno.CAMINHODASFEATURES);
-		pluginReportJunit = planilha.retornarElementoDaPlanilha(identificadorConfiguracaoCucumberPlanilhaDeTestes,
-				TipoRetorno.CAMINHOARQUIVORELATORIOXML);
-		pluginReportJsonCucumber = planilha.retornarElementoDaPlanilha(
-				identificadorConfiguracaoCucumberPlanilhaDeTestes, TipoRetorno.CAMINHOARQUIVORELATORIOJSON);
-	}
 
 	protected ConfigurarThread(String pluginJunit, String pluginJsonCucumber, String caminhoFeatures,
 			String pacoteDeSteps) {

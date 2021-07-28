@@ -1,9 +1,9 @@
 package paginas;
 
 import elementos.ElementsGoogle;
-import interacoes.InteracaoWeb;
+import interation.InteractionWeb;
 
-public class PageGoogle implements InteracaoWeb {
+public class PageGoogle implements InteractionWeb {
 	private ElementsGoogle eleGoogle = new ElementsGoogle();
 	
 	public void openGoogle(String url) {
