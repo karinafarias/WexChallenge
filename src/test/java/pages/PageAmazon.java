@@ -10,7 +10,9 @@ import org.junit.Assert;
 import elements.ElementsAmazon;
 import interation.InteractionWeb;
 import interfaces.log.LogWeb;
-
+/**
+ * This class contains only methods about search in Amazon
+ */
 public class PageAmazon implements InteractionWeb {
 	private ElementsAmazon eleAmazon = new ElementsAmazon();
 	private Integer sumTotalOfFoundProducts = 0;
@@ -23,16 +25,26 @@ public class PageAmazon implements InteractionWeb {
 	
 	Logger logger = LogWeb.getLogger(PageAmazon.class);
 	
+	/**
+	 * This methods writes some text in search bar on Amazon and clicks in search
+	 */
 	public void searchForInTheSearchBar(String text) {
 		write(eleAmazon.getInputSearchBarAmazon(), text);
 		click(eleAmazon.getBtnSearchBarAmazon());
 	}
-
+	/**
+	 * This method sum all found products in result of search on Amazon
+	 *  
+	 */
 	public void SumTotalOfFoundProductsInResultOfSearch() {
 		this.sumTotalOfFoundProducts = getTexts(eleAmazon.getTextResultSearch()).size();
 		logger.info(sumTotalOfFoundProducts);
 	}
-
+	/**
+	 * This method sum all found products that are contais the text as parameter
+	 * and it is not contains some portuguese works 
+	 *  
+	 */
 	public void SumTotalOfFoundProductsInResultOfSearch(String text) {
 		getTexts(eleAmazon.getTextResultSearch()).
 			forEach(t->{
