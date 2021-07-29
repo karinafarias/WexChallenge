@@ -21,14 +21,4 @@ public interface IActionsInBrowser {
 			Assert.fail(LocalDateTime.now() +" "+ e.getMessage() +" "+ url);
 		}
 	}
-
-	default void navegateUrl(String url) {
-		try {
-			logger.info(String.format("Do method [navegarUrl] with address [%s].", url));
-			DriverWeb.getDriver().navigate().to(url);
-		} catch (Exception e) {
-			logger.error(e.getMessage() +" " + url);
-			Assert.fail(LocalDateTime.now() + e.getMessage() +" " + url);
-		}
-	}
 }

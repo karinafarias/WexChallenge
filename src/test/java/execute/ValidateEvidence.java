@@ -7,39 +7,39 @@ public class ValidateEvidence {
 	
 	
 	/**
-	 * Deleta os prints a cada nova execução
+	 * In each new running this method will delete the old prints
 	 * @author leonardoananias
 	 */
-	public void deletarPrints() {
-		validaSePossuiArquivos(naPastaDeEvidencia("PrintsDeErros"));
-		validaSePossuiArquivos(naPastaDeEvidencia("Prints"));
+	public static void deletePrints() {
+		areTheseArchieve(inFolder("ErrorsPrint"));
+		areTheseArchieve(inFolder("Prints"));
 	}
 	/**
-	 * Veriica se possui arquivos na pasta desejada
+	 * Validate if exists some archieve in the folder
 	 * @author leonardoananias
-	 * @param caminho
+	 * @param path
 	 */
-	private void validaSePossuiArquivos(String caminho) {
+	public static void areTheseArchieve(String path) {
 		try {
-			File file = new File(caminho);
+			File file = new File(path);
 			if (file.listFiles().length > 0) {
 				Arrays.stream(file.listFiles()).forEach(File::delete);
 			}
 		} catch (Exception e) {
-			System.out.println("Não foi possível excluir os prints");
+			System.out.println("Prints are not deleted");
 		}
 	}
 	
 	/**
 	 * Retorna a pasta com as evidencias.
 	 * @author leonardoananias
-	 * @param nomeDaPasta
+	 * @param folderName
 	 * @return
 	 */
-	private String naPastaDeEvidencia(String nomeDaPasta) {
+	public static String inFolder(String folderName) {
 		return System.getProperty("user.dir")
 				.concat(File.separator
-				.concat("Evidencias")
-				.concat(File.separator.concat(nomeDaPasta)));
+				.concat("Evidences")
+				.concat(File.separator.concat(folderName)));
 	}
 }

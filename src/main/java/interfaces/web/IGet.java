@@ -20,7 +20,7 @@ public interface IGet {
 	default String getText(By element) {
 		String text = null;
 		try {
-			logger.info(String.format("Do method [obterTexto] with the element [%s].", element));
+			logger.info(String.format("Do method [getText] with the element [%s].", element));
 			text = DriverWeb.getDriver().findElement(element).getText();
 			logger.info(String.format("Get text [%s].", text));
 		}catch (NoSuchElementException|TimeoutException|ElementNotVisibleException e) {
@@ -45,31 +45,4 @@ public interface IGet {
 		return text;
 	}
 
-	
-
-	
-
-
-	
-	
-	
-	default String obterTextoHidden(By element) {
-		try {
-			logger.info(String.format("Do method[obterTexto] with the element [%s].", element));
-			String retorno = DriverWeb.getDriver().findElement(element).getAttribute("innerText");
-			logger.info(String.format("Get text [%s].", retorno));
-			return retorno;
-
-		} catch (NoSuchElementException e) {
-			logger.error(" -- ERRO: element: '" + element + "' NAO encontrado.'");
-			Assert.fail(LocalDateTime.now() + " -- NAO foi possivel localizar o element: '" + element + "' em tela.");
-		} catch (TimeoutException e) {
-			logger.error(" -- ERRO: Tempo excedido para encontrar o element: '" + element);
-			Assert.fail(LocalDateTime.now() + " Tempo excedido para encontrar o element: '" + element + "' em tela.");
-		} catch (ElementNotVisibleException e) {
-			logger.error(" -- ERRO: element: '" + element + "' NAO esta visivel na plataforma: '");
-			Assert.fail(LocalDateTime.now() + " -- O element: " + element + "NAO esta visivel' em tela.");
-		}
-		return null;
-	}
 }

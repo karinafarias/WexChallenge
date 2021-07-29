@@ -5,7 +5,6 @@ import java.io.File;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
-
 import com.cucumber.listener.Reporter;
 import com.hpe.alm.octane.OctaneCucumber;
 
@@ -16,7 +15,7 @@ import enums.Browser;
 
 @RunWith(OctaneCucumber.class)
 @CucumberOptions(features = "src/test/resources/features/", 
-		plugin = {"com.cucumber.listener.ExtentCucumberFormatter:Evidencies/Status.html",
+		plugin = {"com.cucumber.listener.ExtentCucumberFormatter:Evidences/Status.html",
 				"pretty",
 				"html:src/test/resources/relatorios/cucumber-reports/",
 				"json:src/test/resources/relatorios/cucumber-reports/cucumber.json",
@@ -32,8 +31,7 @@ public class CucumberExecuteTest {
 	@BeforeClass
 	public static void setting() {
 		DriverWeb.getDriver(Browser.CHROME, false);
-		new MakeDirectory().validateDiretory();
-		new ValidateEvidence().deletarPrints();
+		ValidateEvidence.deletePrints();
 	}
 
 	@AfterClass
