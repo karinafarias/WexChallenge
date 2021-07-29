@@ -1,5 +1,7 @@
 package execute;
-
+/**
+ * This class starts to run the tests
+ */
 import java.io.File;
 
 import org.junit.AfterClass;

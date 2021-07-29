@@ -49,7 +49,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.openBrowserOn(String)"
 });
 formatter.result({
-  "duration": 893553600,
+  "duration": 1002978900,
   "status": "passed"
 });
 formatter.match({
@@ -62,7 +62,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.searchForAndSearch(String)"
 });
 formatter.result({
-  "duration": 2013449100,
+  "duration": 2215639600,
   "status": "passed"
 });
 formatter.match({
@@ -75,7 +75,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.navigateToThroughTheSearchPage(String)"
 });
 formatter.result({
-  "duration": 1338860100,
+  "duration": 1357982300,
   "status": "passed"
 });
 formatter.match({
@@ -88,7 +88,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.searchForUsingTheSearchBar(String)"
 });
 formatter.result({
-  "duration": 2372189600,
+  "duration": 1738847100,
   "status": "passed"
 });
 formatter.scenario({
@@ -124,7 +124,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.countTheTotalListOfFoundProducts()"
 });
 formatter.result({
-  "duration": 723922000,
+  "duration": 695433700,
   "status": "passed"
 });
 formatter.match({
@@ -137,7 +137,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.countTheTotalOfItemsFound(String)"
 });
 formatter.result({
-  "duration": 2874554500,
+  "duration": 2505852000,
   "status": "passed"
 });
 formatter.match({
@@ -154,12 +154,12 @@ formatter.match({
   "location": "SearchInAmazonSteps.makeSureAtLeastOfItemsFoundAre(String,String)"
 });
 formatter.result({
-  "duration": 1554200,
+  "duration": 1551600,
   "error_message": "java.lang.AssertionError: Sum of the itens found are less than 80%\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat pages.PageAmazon.validateAtLeastOfItensFoundsAre(PageAmazon.java:62)\r\n\tat steps.SearchInAmazonSteps.makeSureAtLeastOfItemsFoundAre(SearchInAmazonSteps.java:45)\r\n\tat ✽.Then Make Sure At Least \"80\"% Of Items Found are \"Iphone\"(SearchInAmazon.feature:13)\r\n",
   "status": "failed"
 });
 formatter.after({
-  "duration": 157312514900,
+  "duration": 157134212100,
   "status": "passed"
 });
 formatter.background({
@@ -199,7 +199,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.openBrowserOn(String)"
 });
 formatter.result({
-  "duration": 628892800,
+  "duration": 494753300,
   "status": "passed"
 });
 formatter.match({
@@ -212,7 +212,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.searchForAndSearch(String)"
 });
 formatter.result({
-  "duration": 1679199000,
+  "duration": 1734623100,
   "status": "passed"
 });
 formatter.match({
@@ -225,7 +225,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.navigateToThroughTheSearchPage(String)"
 });
 formatter.result({
-  "duration": 1249148900,
+  "duration": 1216356800,
   "status": "passed"
 });
 formatter.match({
@@ -238,7 +238,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.searchForUsingTheSearchBar(String)"
 });
 formatter.result({
-  "duration": 358087700,
+  "duration": 320700400,
   "status": "passed"
 });
 formatter.scenario({
@@ -280,7 +280,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.findTheTheMoreExpensiveInPage(String)"
 });
 formatter.result({
-  "duration": 2953408000,
+  "duration": 710869700,
   "status": "passed"
 });
 formatter.match({
@@ -293,7 +293,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.convertItsValueToUSDUsingAPI(String)"
 });
 formatter.result({
-  "duration": 81500,
+  "duration": 85200,
   "status": "passed"
 });
 formatter.match({
@@ -306,12 +306,12 @@ formatter.match({
   "location": "SearchInAmazonSteps.makeSureTheConvertedValueIsNotGreaterThanUS(String)"
 });
 formatter.result({
-  "duration": 140900,
+  "duration": 143000,
   "error_message": "java.lang.AssertionError: The converted value greater than U$2000\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat pages.PageAmazon.validateTheValueIsLessThan(PageAmazon.java:94)\r\n\tat steps.SearchInAmazonSteps.makeSureTheConvertedValueIsNotGreaterThanUS(SearchInAmazonSteps.java:61)\r\n\tat ✽.Then Make Sure The Converted Value Is Not Greater Than US\"2000\"(SearchInAmazon.feature:19)\r\n",
   "status": "failed"
 });
 formatter.after({
-  "duration": 26503836900,
+  "duration": 26487794600,
   "status": "passed"
 });
 formatter.background({
@@ -351,7 +351,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.openBrowserOn(String)"
 });
 formatter.result({
-  "duration": 721330900,
+  "duration": 443501700,
   "status": "passed"
 });
 formatter.match({
@@ -364,7 +364,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.searchForAndSearch(String)"
 });
 formatter.result({
-  "duration": 1496213600,
+  "duration": 1426057700,
   "status": "passed"
 });
 formatter.match({
@@ -377,7 +377,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.navigateToThroughTheSearchPage(String)"
 });
 formatter.result({
-  "duration": 1477423300,
+  "duration": 1405656000,
   "status": "passed"
 });
 formatter.match({
@@ -390,7 +390,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.searchForUsingTheSearchBar(String)"
 });
 formatter.result({
-  "duration": 319452200,
+  "duration": 319083800,
   "status": "passed"
 });
 formatter.scenario({
@@ -427,7 +427,7 @@ formatter.match({
   "location": "SearchInAmazonSteps.findProductsWhichAreNot(String)"
 });
 formatter.result({
-  "duration": 1680013300,
+  "duration": 3713604200,
   "status": "passed"
 });
 formatter.match({
@@ -440,12 +440,11 @@ formatter.match({
   "location": "SearchInAmazonSteps.makeSureAllFoundProductsAreCheaperThanTheCheapest(String)"
 });
 formatter.result({
-  "duration": 165700,
-  "error_message": "java.lang.AssertionError: The price of another product is greater than the Iphone\n Value of Iphone 0.0\n Value of another products 129.0\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat pages.PageAmazon.validateValueFoundProductsAreCheaperThanThe(PageAmazon.java:121)\r\n\tat steps.SearchInAmazonSteps.makeSureAllFoundProductsAreCheaperThanTheCheapest(SearchInAmazonSteps.java:71)\r\n\tat ✽.Then Make Sure All Found Products Are Cheaper Than The Cheapest \"Iphone\"(SearchInAmazon.feature:24)\r\n",
-  "status": "failed"
+  "duration": 39800,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 26651728500,
+  "duration": 26408516500,
   "status": "passed"
 });
 });

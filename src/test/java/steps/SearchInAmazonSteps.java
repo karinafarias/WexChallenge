@@ -1,5 +1,10 @@
 package steps;
-
+/**
+ * This class contains all the steps of the test
+ * The implemetation of these steps are in the classes PageGoogle and PageAmazon(src/test/java/pages)
+ * 
+ * The feature is in the src/test/java/resources/features
+ */
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

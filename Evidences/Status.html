@@ -48,7 +48,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jul 29, 2021 02:09:42 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Jul 29, 2021 02:26:15 AM</span>
 				</a>
 			</li>
 			<li>
@@ -153,10 +153,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> scenario(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='33.333%'><span class='strong'>1</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>3</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='66.667%'>2</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -168,10 +168,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='85%'><span class='strong'>17</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='90%'><span class='strong'>18</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='15%'>3</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='10%'>2</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -188,7 +188,7 @@
 				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Wex challenge</span>
-						<span class='test-time'>Jul 29, 2021 02:09:42 AM</span>
+						<span class='test-time'>Jul 29, 2021 02:26:15 AM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
@@ -196,7 +196,7 @@
 	<div class='category-list'>
 		<span class='category label white-text'>@S1</span>
 	</div>
-	<span class='duration right label'>0h 0m 10s+248ms</span>
+	<span class='duration right label'>0h 0m 9s+550ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
 		<span class="desc-text">80% Of Shown Products Should Be Exclusively The Searched Product</span>
@@ -269,7 +269,7 @@
 	<div class='category-list'>
 		<span class='category label white-text'>@S2</span>
 	</div>
-	<span class='duration right label'>0h 0m 6s+881ms</span>
+	<span class='duration right label'>0h 0m 4s+498ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
 		<span class="desc-text">The Higher Price In The First Page Can't Be Greater Than U$2000</span>
@@ -338,11 +338,11 @@
 		</li>
 	</ul>
 </div>
-<div class='scenario node' test-id='18' status='fail'>
+<div class='scenario node' test-id='18' status='pass'>
 	<div class='category-list'>
 		<span class='category label white-text'>@S3</span>
 	</div>
-	<span class='duration right label'>0h 0m 5s+705ms</span>
+	<span class='duration right label'>0h 0m 7s+317ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
 		<span class="desc-text">Products Different Than The Searched Product Should Be Cheaper Than The Searched Product</span>
@@ -388,19 +388,12 @@
 				<div class='pre'>passed</div>
 			
 		</li>
-		<li test-id='24' class='node then fail' status='fail'>
+		<li test-id='24' class='node then pass' status='pass'>
 			
 			<b>Then</b>
 			
 			<span class="bdd-step-name">Then Make Sure All Found Products Are Cheaper Than The Cheapest "Iphone"</span>
-				<div class='pre'><pre>java.lang.AssertionError: The price of another product is greater than the Iphone
- Value of Iphone 0.0
- Value of another products 129.0
-	at org.junit.Assert.fail(Assert.java:88)
-	at pages.PageAmazon.validateValueFoundProductsAreCheaperThanThe(PageAmazon.java:121)
-	at steps.SearchInAmazonSteps.makeSureAllFoundProductsAreCheaperThanTheCheapest(SearchInAmazonSteps.java:71)
-	at ✽.Then Make Sure All Found Products Are Cheaper Than The Cheapest "Iphone"(SearchInAmazon.feature:24)
-</pre></div>
+				<div class='pre'>passed</div>
 			
 		</li>
 	</ul>
@@ -482,7 +475,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jul 29, 2021 02:09:42 AM</td>
+										<td>Jul 29, 2021 02:26:15 AM</td>
 										<td class='linked' test-id='1'>Wex challenge</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
@@ -516,7 +509,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jul 29, 2021 02:09:42 AM</td>
+										<td>Jul 29, 2021 02:26:15 AM</td>
 										<td class='linked' test-id='2'>Wex challenge.80% Of Shown Products Should Be Exclusively The Searched Product</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
@@ -550,7 +543,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jul 29, 2021 02:12:29 AM</td>
+										<td>Jul 29, 2021 02:29:02 AM</td>
 										<td class='linked' test-id='10'>Wex challenge.The Higher Price In The First Page Can't Be Greater Than U$2000</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
@@ -563,13 +556,13 @@
 					<div class='category-heading'>
 						<span class='category-name'>@S3</span>
 						<span class='category-status right'>
-							<span class='label fail'>1</span>
+							<span class='label pass'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
 							
-							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 					
@@ -584,9 +577,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jul 29, 2021 02:13:03 AM</td>
+										<td>Jul 29, 2021 02:29:33 AM</td>
 										<td class='linked' test-id='18'>Wex challenge.Products Different Than The Searched Product Should Be Cheaper Than The Searched Product</td>
-										<td><span class='test-status fail'>fail</span></td>
+										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -633,7 +626,7 @@
                         <li class='exception displayed active'>
                             <div class='exception-heading'>
                                 <span class='exception-name'>java.lang.AssertionError</span>
-                                <span class='exception-count right'><span class='label red lighten-1 white-text'>3</span></span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>2</span></span>
                             </div>
                             <div class='exception-content hide'>
                                 <div class='exception-tests'>
@@ -647,7 +640,7 @@
                                         </thead>
                                         <tbody>
                                                     <tr>
-                                                        <td>Jul 29, 2021 02:09:52 AM</td>
+                                                        <td>Jul 29, 2021 02:26:25 AM</td>
                                                         <td class='linked' test-id='9'>Wex challenge.80% Of Shown Products Should Be Exclusively The Searched Product.Then Make Sure At Least "80"% Of Items Found are "Iphone"</td>
                                                         <td><pre><pre>java.lang.AssertionError: Sum of the itens found are less than 80%
 	at org.junit.Assert.fail(Assert.java:88)
@@ -657,25 +650,13 @@
 </pre></pre></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Jul 29, 2021 02:12:36 AM</td>
+                                                        <td>Jul 29, 2021 02:29:07 AM</td>
                                                         <td class='linked' test-id='17'>Wex challenge.The Higher Price In The First Page Can't Be Greater Than U$2000.Then Make Sure The Converted Value Is Not Greater Than US"2000"</td>
                                                         <td><pre><pre>java.lang.AssertionError: The converted value greater than U$2000
 	at org.junit.Assert.fail(Assert.java:88)
 	at pages.PageAmazon.validateTheValueIsLessThan(PageAmazon.java:94)
 	at steps.SearchInAmazonSteps.makeSureTheConvertedValueIsNotGreaterThanUS(SearchInAmazonSteps.java:61)
 	at ✽.Then Make Sure The Converted Value Is Not Greater Than US"2000"(SearchInAmazon.feature:19)
-</pre></pre></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Jul 29, 2021 02:13:08 AM</td>
-                                                        <td class='linked' test-id='24'>Wex challenge.Products Different Than The Searched Product Should Be Cheaper Than The Searched Product.Then Make Sure All Found Products Are Cheaper Than The Cheapest "Iphone"</td>
-                                                        <td><pre><pre>java.lang.AssertionError: The price of another product is greater than the Iphone
- Value of Iphone 0.0
- Value of another products 129.0
-	at org.junit.Assert.fail(Assert.java:88)
-	at pages.PageAmazon.validateValueFoundProductsAreCheaperThanThe(PageAmazon.java:121)
-	at steps.SearchInAmazonSteps.makeSureAllFoundProductsAreCheaperThanTheCheapest(SearchInAmazonSteps.java:71)
-	at ✽.Then Make Sure All Found Products Are Cheaper Than The Cheapest "Iphone"(SearchInAmazon.feature:24)
 </pre></pre></td>
                                                     </tr>
                                         </tbody>
@@ -720,19 +701,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jul 29, 2021 02:09:42 AM</div>
+					<div class='panel-lead'>Jul 29, 2021 02:26:15 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jul 29, 2021 02:13:36 AM</div>
+			 		<div class='panel-lead'>Jul 29, 2021 02:30:07 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>234,094ms</div>
+					<div class='panel-lead'>232,237ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -786,8 +767,8 @@
 						</tr>
 						<tr>
 							<td>@S3</td>
-							<td>0</td>
 							<td>1</td>
+							<td>0</td>
 							<td>0</td>
 						</tr>
 					</table>
@@ -820,23 +801,23 @@
 				skipParent: 0,
 				exceptionsParent: 1,
 				
-				passChild: 0,
-				failChild: 3,
+				passChild: 1,
+				failChild: 2,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 3,
+				exceptionsChild: 2,
 				
-				passGrandChild: 17,
-				failGrandChild: 3,
+				passGrandChild: 18,
+				failGrandChild: 2,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
 				skipGrandChild: 0,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 3,
+				exceptionsGrandChild: 2,
 			};
 		</script>
 		
