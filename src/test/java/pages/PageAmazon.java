@@ -7,6 +7,8 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 
+import com.mongodb.connection.Stream;
+
 import elements.ElementsAmazon;
 import interation.InteractionWeb;
 import interfaces.log.LogWeb;
@@ -42,8 +44,8 @@ public class PageAmazon implements InteractionWeb {
 	}
 	/**
 	 * This method sum all found products that are contais the text as parameter
-	 * and it is not contains some portuguese works 
-	 *  
+	 * and it is not contains some portuguese words 
+	 *  @param text
 	 */
 	public void SumTotalOfFoundProductsInResultOfSearch(String text) {
 		getTexts(eleAmazon.getTextResultSearch()).
@@ -81,7 +83,6 @@ public class PageAmazon implements InteractionWeb {
 		List<String>textFractionPrices = getTexts(eleAmazon.getTextFractionPrice());
 		List<String>textPrices = new ArrayList<>();
 		List<Float>floatPrices = new ArrayList<>();
-		
 		for (int i=0; i< textWholePrices.size(); i++) {
 			textPrices.add(textWholePrices.get(i).concat(textFractionPrices.get(i)));
 		}
